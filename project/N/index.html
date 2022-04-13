@@ -1,0 +1,637 @@
+<html lang="ru"><head><script type="text/javascript"></script><style class="default-style">
+        body,html {
+          background-color: #fcfcfc;
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        input[type=text],textarea {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          outline: none;
+        }
+
+        a {
+          color: #4a4a4a
+        }
+
+        selection {
+          padding: 2px 0px;
+          max-width: 900px;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 17px;
+          line-height: 25px;
+          letter-spacing: 0.1px;
+          margin-bottom: 9px;
+          margin-top: 0px;
+          background: #f3dc1e;
+          color: #303030;
+        }
+
+        @media (max-width: 640px) {
+          selection {
+            letter-spacing: 0px;
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 12px;
+            margin-top: 4px;
+          }
+        }
+
+        input[type=text]::placeholder{ color: #d69ccd; }
+        textarea::placeholder{ color: #d69ccd; }
+
+        ::selection {
+          background: #F3DC1E;
+          color: #0B0B0B;
+          text-shadow: none;
+        }
+
+        .pink-text-selected::selection {
+          background: #ffc8f6;
+          color: #0B0B0B;
+        }
+
+        .console-text-selected::selection {
+          background: #56ab4861;
+          color: #b2d5ac;
+        }
+
+        code {
+          font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
+        }
+
+        ::scrollbar {
+          width: 6px;
+          height: 6px;
+        }
+
+        ::-moz-scrollbar {
+          width: 6px;
+          height: 6px;
+        }
+
+        ::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
+        }
+
+        ::scrollbar-corner { background-color: transparent; }
+        ::-moz-scrollbar-corner { background-color: transparent; }
+        ::-webkit-scrollbar-corner { background-color: transparent; }
+
+        ::scrollbar-thumb {
+          height: 20px;
+          background-color: #77777769;
+          border-radius: 6px;
+        }
+
+        ::-moz-scrollbar-thumb {
+          height: 20px;
+          background-color: #77777769;
+          border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          height: 20px;
+          background-color: #77777769;
+          border-radius: 6px;
+        }
+
+        ::scrollbar-button {
+          display: none;
+        }
+
+        ::-moz-scrollbar-button {
+          display: none;
+        }
+
+        ::-webkit-scrollbar-button {
+          display: none;
+        }
+
+        ::scrollbar-button {
+          display: none;
+        }
+
+        body::scrollbar {
+          width: 20px;
+        }
+
+        body::-moz-scrollbar {
+          width: 20px;
+        }
+
+        body::-webkit-scrollbar {
+          width: 20px;
+        }
+
+        body::scrollbar-thumb {
+          height: 100px;
+          background-color: #0c0c0c;
+          border-radius: 16px;
+          border: 4px solid #fcfcfc;
+        }
+
+        body::-moz-scrollbar-thumb {
+          height: 100px;
+          background-color: #0c0c0c;
+          border-radius: 16px;
+          border: 4px solid #fcfcfc;
+        }
+
+        body::-webkit-scrollbar-thumb {
+          height: 100px;
+          background-color: #0c0c0c;
+          border-radius: 16px;
+          border: 4px solid #fcfcfc;
+        }
+
+        body::scrollbar-button {
+          display: none;
+        }
+
+        body::-moz-scrollbar-button {
+          display: none;
+        }
+
+        body::-webkit-scrollbar-button {
+          display: none;
+        }
+    </style><script defer="defer" src="/static/js/main.3ebc204f.js"></script><link href="/static/css/main.e495c296.css" rel="stylesheet"><style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style><meta charset="utf-8" class="encoding________generatamine"><meta http-equiv="X-UA-Compatible" content="IE=edge" class="http-equiv________generatamine"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" class="viewport________generatamine"><meta name="theme-color" content="#000000" class="theme-color________generatamine"><meta property="og:image" content="https://prohetamine.ru/project/N/screenshot.png" class="og_image________generatamine"><meta property="og:image:url" content="https://prohetamine.ru/project/N/screenshot.png" class="og_image_url________generatamine"><meta property="og:image:secure_url" content="https://prohetamine.ru/project/N/screenshot.png" class="og_image_secure_url________generatamine"><meta property="og:image:type" content="image/png" class="og_image_type________generatamine"><meta property="og:image:width" content="1280" class="og_image_width________generatamine"><meta property="og:image:height" content="720" class="og_image_height________generatamine"><meta property="og:url" content="https://prohetamine.ru/project/N" class="og_url________generatamine"><title class="title________generatamine">Stas Prohetamine | 404 (undefined) — Проект</title><meta property="og:title" content="Stas Prohetamine | 404 (undefined) — Проект" class="og_title________generatamine"><meta name="author" content="Stas Prohetamine" class="author________generatamine"><meta name="description" content="Сервис не найден или еще не оформлен должным образом и его не возможно отобразить, может быть он удален или его никогда не было ? Посмотрите в разделе со всеми сервисами, может быть просто изменилась ссылка.." class="description________generatamine"><meta property="og:description" content="Сервис не найден или еще не оформлен должным образом и его не возможно отобразить, может быть он удален или его никогда не было ? Посмотрите в разделе со всеми сервисами, может быть просто изменилась ссылка.." class="og_description________generatamine"><meta name="keywords" content="Stas Prohetamine" class="keywords________generatamine"><meta property="og:type" content="article" class="og_type________generatamine"><meta property="og:locale" content="ru_RU" class="og_locale________generatamine"><link rel="image_src" href="/logo512.png" class="image_src________generatamine"><link rel="apple-touch-icon" href="/logo192.png" class="apple-touch-icon________generatamine"><link rel="manifest" href="/manifest.json" class="manifest________generatamine"><link rel="icon" type="image/svg+xml" href="/favicon.svg" class="favicon________generatamine"><link rel="preconnect" href="https://fonts.googleapis.com" class="googleapis________generatamine"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" class="gstatic________generatamine"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Festive&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" class="stylesheet________generatamine"><style data-styled="active" data-styled-version="5.3.5"></style><style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style></head><body><noscript><div><img src="https://mc.yandex.ru/watch/86923605" style="position:absolute;left:-9999px" alt=""/></div></noscript><div id="root"><div class="light_body__5tzR2"><div class="light_body__H-YWC" style="opacity: 1;"><img class="light_avatar__qLby3" src="/static/media/avatar.8a848a55b4281c830b0560189fa64074.svg" draggable="false"><div class="light_name__5q64k color_colorLightTitle__4XDAi">Stas Prohetamine</div><div class="light_description__MaABS color_colorLightDescription__HvHV3">Мне 22 года, живу в России и 6 лет что-то делаю в IT.</div><div class="light_line__NXXj-"></div><nav class="light_navigation__pUjpP"><div class="light_button__7tKON" style="margin-top: 0px;"><a class="light_link__ejvJ3" name="main-link" href="/#main-me" style="margin-top: 0px;"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAYrSURBVHgBxVZraBxVFP7uzOzsK7vdbPPsNu2mrX1s6cu0IrVVEZVarWIF0SLS+kdLQfwh/e0/UYT+KYIoiIjFBxZ8ICrFEhWporVpgqZt2jTSPE12k91sdnYe93rmtbsh3dDoD5OdvbMz95zvnnO+890L/E9/bCmTc2e3p6OR5n2Ibt4qBaJpMFnlQpqyClcvl2Yu/HRtmXpm587fjFvxdUvAhTOZTKjtnlfl5J0HWGwH2XB6KtyP4M7IzQLMmf5Jffzbt2fy/W907Psj+5+A82e7NsY6n/4OibvaITTAKhEKjYICExYEt4E5LUCACwZu6dCHv+7VJnv3NT92aaSeX2Ux0FL36k5ZDXdbVrFFnusFjCkCzhOwDa4ToAnmRGzRbw7GJVoPh8S0LUoAH5GLvfg3EfPzD3/KGtYdHDj3GRKtKSxvjVNZhWfGPXDuXQRuCRi6iXKpBMuYg2ZKj7YdGPhiSRGPffNgi6XnHmDZX5DPldDf2wfDEEitCqMjHUNzqglKJElrUNy0O+kvUNQEWCxCL5tQgoEnyNXSgMPKjbSlGTFD54jHgM69ccxM6xge1nHuxzGq5RiC0TAUNYKgCkqvDlMvU7QGpqZM7N4dQyygbK3nvy4wM0pBTbOQm9LR1BJEPBFCY3MUHWspoyaHaVg0WlRal1iOK2FfAhcvFiHLzOZA45KB53TZkM0yTHLeEAvAMAXyWYMqy9DaHoXKfHoIlDWO3N9FKApDMiljU0bCyI0igkFZXzJwUeNFuWwgFg/Y8eOTD0eQSKiIRCQkGkMIhn1ThhvXC7h+tYCJ8TLSnWF07Yzh2hWBUllM1vMv1XsxWVJHZguYVhQJEl0HD22CGY2g9bYUZEVCtSEYUp2NUJJJbNi1Grff0QhJkhBfpmAmL/cvGXhFgj1nWjxhp7JkxPB+dztOX1iJl09MYVpfMW/umYur8MH3cRx5ZRBZ+V7nmaFbaFluHjn93rPLlwSslSzZpPaxW0iNtqCxqQ0DPT24f1sYiVV7KvMERdy8ehfO/9yH/V0BRJLrHRktzlp2NriihUo3819XQPpObdsTKo/80BBT0NzWABZdhcHBWbR1dCASIBk2s545MTq8FoOXR7CsMY7G8AT0uWmq+yxC0fCfK5/8K3Mz//VZXVYHoopUoIhjdvso2jDWpGR6cwmwBUsKgcW3gJPASHNX0Jmyd4oZ6iCL+pk7Pkwueur5XwBMPcmGhobSoVCIZbsPvxPgE8fKCKlCCjikoS8YxPa+36fR1HYFZllF54ak07/U4bRRcGi0meiKuGw07393aOzommI2W8pkMqNYLNUnT775UigcPiHLMiSZGC3JYMwemTMyr3/9NhbO1iicunIuHGB7x7Isy7nse9MyDZMFN734/OGrdSOemJxKqKpKLSNDscEpQtkbbVDGWM2ahZ8lR8FsYIvbauaqmuUvwDQDtKJ1NLU+MK1dE/a3E0Ul/a4s2qA02uDOAaBanoq1/d47G1Se298BhU1jsRqTzZzj3MujA+o78QEYmwfqHgKqc300VmPHwpGJRYFlzgouECpOBKVQEK+Y79g+daAatfANqj/c3NVErHI+Tz4XCAiVcgreXm/DcOGbwqmhMwqXRKlUysPilejtbIiKheOEtkymHT9+fHZRYJo8Wampky5RrbF3z4kwzxx6Co/sfwid6bRHLq8knHvnMHfhzjPGSsQLsSjwrz3tO/zVz6tdzWUz2DAM2vbs3SrigQoXVFSZDi9bdCrSMpmP1VqceTXO7Dq1eXRy2WsC1OtCdtdrf1gtc90Ufv7lV4iEw8jlcs48Jnwm++UWFfvpQqTdVPUT9PDYzSMW0utMSkadc7LngXup4146Le7WM5/PY2x8HGVdd8/VfrSs2krCS7emR8gu8sLGbSfXLwDevv1EmrptnxAqTXLFoZpml9ncUSfuiERVNLirVjXlcbkArx1pizSCtKc3SLoIHF0AXGbhuyUpIpHg0HFHrqkRfIpUWqbSn/7bChm9OnOfVu5701RIBUN0H3q8q+utwLwak+F9XMgGneIwPBpFa9Moc+TRlkn737n1dbpGQOAXF16GeA0x3UXkZkJCclRPaR4vZVfT7IF/AK7AwHQJR+7HAAAAAElFTkSuQmCC"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">О себе</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#main-me" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">О себе</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#work"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,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"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Чем я занимаюсь</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#work" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Чем я занимаюсь</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#service"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVeSURBVHgBtVdLSJxXFD6j4/v91mo0iVVbkSIuski1lUpChRYKxUXIoqDgQrORQgmlC7sJmIWmBCMaFReVFiNCIRSKxAeB+mh0oSKK7ze+Rx0f47Pfd5k7zBiN2kwPXP757/3v+c757nncMcgF0traahwYGPj25OTkHl5vHBwcBK2tra26u7ubAgMD293c3F4VFBS8liuK4V2LADPU1dW92N7e/mp8fNxjeXmZcxITEyODg4MSEREh4eHhEhIS8qioqOgng8FwIpcU13ctBgcHJ+zv71dAoXFpaUlGRkZkc3NTpqamZGVlRUwmE0Fla2sro7Ozc6Wtra1bnAEMGuvDwsI+pJfw0DwzM2MG1V4uLi5yeHgorq6usri4KKCez3AY9lwuKcbzFjIzM41Q6NPd3S3+/v4Crz18fX1/OD4+fubn5ycJCQkSHx8v09PTMjc3J0FBQcNyBXE5bwHnmO7h4ZFOikElh9vR0dFLzPWHhoaquY6ODuH63t4evf5InAFsNBq/BLjBy8tLcM4CT0l9TWRkZOLOzo6kpaXJ+vq6wBh+/nB1dfWeXEHOpRoK40CfTE5OCqJaASN97vB3RkYGg8uC8362sbFhhkG/dHV17YkzgEFfDEE0KJRLbGysDA0NSUtLyw6oftjb2/tU/qOcCwzqPoA3CpRUc8zOzpoCAgKeY/5HpM+hvIecCdzQ0ODa2NgIlidvMnBAqezu7g6Mjo5mwuNVcYKcCQyQ+Nzc3C+io6NVqgBQvL29H2HOKaBnAufk5LjC05eMZqSOilpUMLFYLO9F7YXAnp6e6YjYhOHhYVUaWZ1YuZA6+Vh+IU6St/IYlN5HhRJ0H+aymuM5I3f/P49Bs5ePj89dDAWsvWVtBu0mcaI4AEdFRd2Gl3GoywqQg+nEd4DvXEYhWynbY35+vjdyPwzvlvLy8sXTLdOhH+fl5T1FA3iAXOVZ2zy2Ul1eUlLy4DRQaWlpBvI7G8GYBuUfw1BfpN8uHAiDDnfuR2DOYH81YudJfX395lseY/FrViierW57jGoCo4I5nHFFRUUKvqvBsdxaWFhQhiIN1fdsIuxgPC5rC72GgvQzDLsLJr6pqqpasQVXdna2PzZdY4WiAjYCs9lsG5izUV1bW/s5AvB1XFzcrcTERMUKSyu/00Gpj4rAdIYBCyM/xe8nDh7jg1iAutA7bmC1otADGgOrl/heXV2dAlob0Y8D0akUKzRSf08g7mcdIAv9/f1KBxqMMiwlJUX6+vo+swFjMZobGEikmQoo/M2NGEOVlZUBsLwpOTk5lHctXn/GxsZY11UQ0ggaTgB6SRaam5ulsLBQsEc1GNxi7mMu2QaMDYH8WHupI5vAGHOg8A1y/DFuHQn0pqenRyYmJtSx8B6m95BmDm0EhetsONoJsmMfXFHWpm5TotthamrqYFZW1h8ImNvz8/Nsi7ZLAJXxNsLf+kwJyv188trU1NSk9FAfbqY1+P2bPdVBXEAuS1JSkopK7QG8utPe3q5ulQQigAblk2dM4X57oRFgSelRAQVdeL+OFHxlA8amIIJxkXdmWqgV82kvOmK5RjBSR+903mvj+CQoB48HN9Z5BNn3DlEN8aYCXnUojEhNt71o6zW4Pb1Wj9ReayaoNTqE+/c/AM0rKyvrdwCGwmOdOnzqc9Igp8V+ju2T9Z1PgnLwbBGQB2CuG+MxDPqzuLjYRp0NGB/9CmXfIV3c7QuABtBPTR090YPHwouhFdSC9zeY/wuf/47zHD3rr41DrcYl/jqo/QS1+hhjAx6QZ0+A+uAZCONuQukNsOEPxQYMrpuRVnM4v0kYPIlA+xuVbUsukH8BVFdRArHxpSsAAAAASUVORK5CYII="><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Мои сервисы</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#service" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Мои сервисы</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#projects"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,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"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Мои проекты</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#projects" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Мои проекты</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#articles"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,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"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Статьи</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#articles" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Статьи</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#my-progress"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,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"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Мои достижения</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#my-progress" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Мои достижения</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#history"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,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"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Охуительные истории</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#history" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Охуительные истории</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#social"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,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"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Мои соц сети</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#social" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Мои соц сети</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/#contacts"><img class="light_linkIcon__i0Y1c" src="data:image/png;base64,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"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Контакты</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/#contacts" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Контакты</div></a></span></div><div class="light_line__NXXj-"></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/lenta"><img class="light_linkIcon__i0Y1c" src="/static/media/lenta.17da3f53db8524556921.png"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Лента новостей</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/lenta" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Лента новостей</div></a></span></div><div class="light_button__7tKON"><a class="light_link__ejvJ3" name="main-link" href="/merch"><img class="light_linkIcon__i0Y1c" src="/static/media/merch.15e5cf28544c11999cb6.png"><div class="light_linkText__+vLLi color_colorLightDescription__HvHV3">Мерч</div></a><span class="light_hintBody__itQwX" style="opacity: 0; transform: scale(0);"><a href="/merch" style="display: contents;"><div class="light_hintIcons__MaoNd" style="background-image: url(&quot;/static/media/light-hint-arrow.bfaed3b4146550aa698c6a9978a77f94.svg&quot;); background-size: cover;"></div><div class="light_hintText__dVe1g color_colorDarkTitle__vOEey color_colorDarkBackground__+Z1tX">Мерч</div></a></span></div></nav><div class="light_line__NXXj-"></div><div class="light_body__dy-uE"><div class="light_text__CyvGF">Светлая версия сайта</div><div class="light_overflow__25eVZ color_colorDarkBackground__+Z1tX"><div class="light_circle__SEBkA" style="left: 8px;"></div></div></div><div class="light_line__NXXj- light_lineEnd__P4i+b"></div><p class="light_miniText__M3S6Y">Благодаря любви, которую люди испытывают к тебе, твое дело может продолжаться вечно. <span class="light_miniTextInverse__ABmK5">Мерикара.</span></p></div><div class="main_body__Xs0LD"><div class="light_wrapper__L8lfx"><h1 class="light_titleH1__UXHK9 color_colorLightTitle__4XDAi main_titleH1__ZYtaS light_titleMarginTop__6kUR4">404</h1><p class="light_description__9lk9s color_colorLightDescription__HvHV3 main_description__5-Xwn">Проект не найден или еще не оформлен должным образом и его не возможно отобразить, может быть он удален или его никогда не было ? Посмотрите в разделе со всеми проектами, может быть просто изменилась ссылка..</p><div class="main_overflow__MI4ek" theme="light"><a class="main_link__AGrgd" href="/projects"><div class="light_buttonLink__HO1ex color_colorLightButtonLink__fx9U4 main_buttonLink__DmjHI"><b>Смотреть все проекты</b></div><svg class="main_icon__+uDWg" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" transform-origin="6.374987602233887px 5.999518632888794px" style="transform: translateX(0px); transform-origin: 6.37499px 5.99952px;"><path d="M14.5303 6.52986C14.8232 6.23697 14.8232 5.76209 14.5303 5.4692L9.7574 0.696232C9.4645 0.403339 8.9896 0.403339 8.6967 0.696232C8.4038 0.989126 8.4038 1.464 8.6967 1.75689L12.9393 5.99953L8.6967 10.2421C8.4038 10.535 8.4038 11.0099 8.6967 11.3028C8.9896 11.5957 9.4645 11.5957 9.7574 11.3028L14.5303 6.52986ZM-2 6.74953H14V5.24953H-2V6.74953Z" class="light_buttonLink__HO1ex color_colorLightButtonLink__fx9U4 main_buttonLink__DmjHI" stroke-width="0.6"></path></svg></a></div></div></div></div></div></body></html>

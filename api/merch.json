@@ -1,0 +1,23 @@
+[
+  {
+    "image": "/api/images/1638256412121957268.jpg",
+    "title": "Скульптура: Женщина как Мужчина",
+    "description": "Уникальное произведение искусства буквально из мусора со своей <a href='https://pikabu.ru/story/skaz_o_tom_kak_programmist_skulpturu_sozdaval_8653314'>историей</a> и описанием технологии создания. Скульптура полностью изготовленна мной. Продается в единственном экземпляре и больше никогда не будет повторена все шаблоны и инструменты будут сожжены дотла.",
+    "link": ["https://www.livemaster.ru/item/42597660-dlya-doma-i-interera-skulptura-zhenschina-kak-muzhchina", "Купить за 200 000 рублей"],
+    "tags": ["Искусство", "Ручная работа"]
+  },
+  {
+    "image": "/api/images/267b4555da804c803c0da8817e87cf0b.jpg",
+    "title": "Часы, Таймер и Игра",
+    "description": "Устройство про создание которого написана обучающая <a href='https://habr.com/ru/post/593421/'>статья</a>, покупая это ничем не примечательное устройство вы просто делаете мне донейшин.",
+    "link": ["https://t.me/prohetamine", "Купить за 1 000$"],
+    "tags": ["Электроника", "Arduino"]
+  },
+  {
+    "image": "/api/images/wefoijdsfdfzihsdvs.gif",
+    "title": "Светодиодный костюм",
+    "description": "Запрограммированый светодиодный костюм. Разработаный на Arduino, используется как реквизит для любых шоу или просто как костюм байкера. Посмотреть можно <a href='https://www.youtube.com/shorts/T77yLpTPBh4'>тут</a> в хорошем качестве.",
+    "link": ["https://www.livemaster.ru/item/43191820-aktivnyj-otdyh-i-razvlecheniya-rekvizit-dlya-animatorov-sveto", "Купить за 2 200$ (На заказ)"],
+    "tags": ["Электроника", "Arduino", "Светодиоды"]
+  }
+]
