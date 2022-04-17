@@ -1,5 +1,6 @@
 [
   {
+    "titleShort": "Покатаем",
     "image": "/api/images/ezgif-2-3743d6a715.gif",
     "title": "Покатаем",
     "type": "сайт, приложение",
@@ -24,6 +25,7 @@
     "tags": ["Своя история", "Для всех", "Не готово", "StartUp", "Мечта", "React"]
   },
   {
+    "titleShort": "Fishing",
     "image": "/api/images/sdfdgfhkjgdsjsdkfsdjkf.png",
     "title": "Fishing",
     "type": "расширение",
@@ -40,6 +42,7 @@
     "tags": ["Своя история", "Для всех", "Мечта", "StartUp", "Не готово"]
   },
   {
+    "titleShort": "AntiStream",
     "image": "/api/images/sdfgdhfjgghfgdvscdads.png",
     "title": "AntiStream",
     "type": "софт",
@@ -56,6 +59,7 @@
     "tags": ["Не готово", "Мечта", "Для всех"]
   },
   {
+    "titleShort": "BitHelp",
     "image": "/api/images/sdguierigeojrgerugier.png",
     "title": "BitHelp",
     "type": "сайт, мобильное приложение",
@@ -82,6 +86,7 @@
     "tags": ["Для всех", "Мечта", "StartUp", "Не готово"]
   },
   {
+    "titleShort": "Narod Mask",
     "image": "/api/images/5c52ef74eaa840658515fa6a486fcb3d.gif",
     "title": "Narod Mask",
     "type": "сайт",
@@ -98,6 +103,7 @@
     "tags": ["For fun", "Для всех", "Не готово", "JavaScript", "VR"]
   },
   {
+    "titleShort": "Throwdick",
     "image": "/api/images/fsdgfhgjkjfdsfsdfsdfs.gif",
     "title": "Throwdick",
     "type": "сайт, приложение",
@@ -118,6 +124,7 @@
     "tags": ["Своя история", "For fun", "Для всех", "Готово", "JavaScript", "React"]
   },
   {
+    "titleShort": "MEX STUDIO",
     "image": "/api/images/fdernguiergnergiergnergnergnie.jpg",
     "title": "MEX STUDIO",
     "type": "сайт, приложение",
@@ -139,6 +146,7 @@
     "tags": ["Своя история", "Деньги", "StartUp", "Вэбкам", "Готово", "JavaScript"]
   },
   {
+    "titleShort": "Nopress",
     "image": "/api/images/gerergef23r23fefwefefwefewf.png",
     "title": "Nopress",
     "type": "сайт",
@@ -160,6 +168,7 @@
     "tags": ["Своя история", "Мечта", "Не готово", "Для всех"]
   },
   {
+    "titleShort": "QR-map.money",
     "image": "/api/images/sfsdfdsg34ge5gerergre.png",
     "title": "QR-map.money",
     "type": "сайт, мобильное приложение",
@@ -177,6 +186,7 @@
     "tags": ["Своя история", "For fun", "Для всех", "Идея", "Готово", "JavaScript", "React"]
   },
   {
+    "titleShort": "Habr Freelance",
     "image": "/api/images/csdksdkjvdsvsdjvsdkvbsjkv.png",
     "title": "расширение Habr Freelance",
     "type": "расширение",
@@ -202,6 +212,7 @@
     "tags": ["Своя история", "Работа", "Деньги", "Для всех", "Готово", "JavaScript", "Chrome extension"]
   },
   {
+    "titleShort": "JS.VPN-Client",
     "image": "/api/images/dsjfkhgweofinkjds.jpg",
     "title": "JS.VPN-Client",
     "type": "приложение",
@@ -224,6 +235,7 @@
     "tags": ["Своя история", "Для всех", "Готово", "JavaScript", "OpenVPN", "Electron", "NodeJS"]
   },
   {
+    "titleShort": "Voltica",
     "image": "/api/images/dsfgudihfjdrungjkfdgjidofgn.jpg",
     "title": "Voltica",
     "type": "сайт, приложение",
@@ -245,6 +257,7 @@
     "tags": ["Деньги", "Вэбкам", "Готово", "JavaScript", "React", "NodeJS"]
   },
   {
+    "titleShort": "Radio.Boomer FM",
     "image": "/api/images/dfdsfsdfsdfsdfsdfsdfsdf.png",
     "title": "Radio.Boomer FM",
     "type": "сайт",
@@ -275,6 +288,7 @@
     "tags": ["Своя история", "Для всех", "Готово", "JavaScript", "React", "NodeJS"]
   },
   {
+    "titleShort": "Emoji Art",
     "image": "/api/images/dfsgdhfju6y5teweacdsdsf.png",
     "title": "Emoji Art",
     "type": "сайт",
@@ -298,6 +312,7 @@
     "tags": ["Своя история", "For fun", "Для всех", "Готово", "JavaScript", "Canvas", "React"]
   },
   {
+    "titleShort": "Ifpractic",
     "image": "/api/images/adsfghjhtergergergergergre.png",
     "title": "Ifpractic",
     "type": "сайт",
