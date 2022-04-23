@@ -4,7 +4,7 @@
     "sound": "/api/sounds/start.mp3"
   },
   {
-    "title": "#1 empty",
-    "sound": "/api/sounds/start.mp3"
+    "title": "Не выходи из комнаты, не совершай ошибку. Немного кринжухи.",
+    "sound": "/api/sounds/door.mp3"
   }
 ]
