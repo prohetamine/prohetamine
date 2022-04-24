@@ -2,4 +2,6 @@
 
 И не знать такое — глупо, 
 
-Буква Z — это [******](https://www.youtube.com/watch?v=rmEW_cUX3Qc)
+Буква Z — это ...
+
+[YouTube](https://www.youtube.com/watch?v=rmEW_cUX3Qc)
