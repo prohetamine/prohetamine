@@ -1,2 +1,2 @@
-[![Foo](/lol.png)](http://google.com/)
+[![Foo](lol.png)](http://google.com/)
 
