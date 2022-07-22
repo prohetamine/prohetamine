@@ -1,1 +1,1 @@
-[![Foo](out6.png)](http://google.com/)
+[![prohetamine.ru](site.gif)](https://prohetamine.ru/)
