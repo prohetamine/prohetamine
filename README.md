@@ -1,2 +1,1 @@
-[![Foo](out7.png)](http://google.com/)
-
+... и не знать [такое](https://www.youtube.com/watch?v=rmEW_cUX3Qc) — глупо ...
