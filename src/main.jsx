@@ -17,7 +17,7 @@ const config = {
   host: '/'
 }
 
-alert('Сайт в разрботке ٩(×̯×)۶')
+alert('Сайт в разработке ٩(×̯×)۶')
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
