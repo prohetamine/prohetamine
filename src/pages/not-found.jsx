@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Control, Flex, Icon, MicroFont500 } from '../components/global.jsx'
 
-import image404 from './../assets/404.apng'
+import image404 from './../assets/404.gif'
 import arrowLeftIcon from './../assets/icons/arrow-left.svg?react'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
