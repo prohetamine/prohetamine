@@ -213,7 +213,7 @@ const Home = () => {
                       </Flex>
                     </Control>
                     <Control 
-                      onTap={() => window.location = 'mailto:prohetamine@gmail.com'}
+                      onTap={() => window.location = 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=prohetamine@gmail.com'}
                       whileTap={{ y: 2, scale: 0.97 }} 
                       style={{ background: 'var(--colors-controll-default-background-alt-google)' }}
                     >
