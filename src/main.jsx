@@ -5,6 +5,7 @@ import * as Redstone from '@prohetamine/redstone'
 import { StasPayProvider } from 'stas-pay'
 import './index.css'
 import Home from './pages/home.jsx'
+import NotFound from './pages/not-found.jsx'
 
 const config = {
   metadata: {
@@ -17,7 +18,7 @@ const config = {
   host: '/'
 }
 
-alert('Сайт в разработке ٩(×̯×)۶')
+//alert('Сайт в разработке ٩(×̯×)۶')
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,6 +28,9 @@ createRoot(document.getElementById('root')).render(
           <Routes>
             <Route index element={<Home />} />
             <Route path='/bio' element={<Home />} />
+            <Route path='/articles' element={<Home />} />
+            <Route path='/contacts' element={<Home />} />
+            <Route path='*'  element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </StasPayProvider>
