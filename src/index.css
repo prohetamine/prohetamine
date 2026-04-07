@@ -21,6 +21,9 @@ body {
   --colors-controll-default-background: linear-gradient(148deg, rgba(148, 137, 37, 0.1), rgba(148, 137, 37, 0.12));
   --colors-controll-default-background-alt-tg: linear-gradient(148deg, rgba(0, 62, 129, 0.1), rgba(0, 62, 129, 0.12));
   --colors-controll-default-background-alt-google: linear-gradient(148deg, rgba(0, 129, 69, 0.1), rgba(0, 129, 69, 0.12));
+  --colors-controll-default-background-alt-habr: linear-gradient(148deg, rgba(0, 92, 129, 0.1), rgba(0, 92, 129, 0.12));
+  --colors-controll-default-background-alt-telegraf: linear-gradient(148deg, rgba(63, 63, 63, 0.1), rgba(63, 63, 63, 0.12));
+  --colors-controll-default-background-alt-pikabu: linear-gradient(148deg, rgba(158, 134, 1, 0.1), rgba(158, 134, 1, 0.12));
 
   --font-family: "Roboto", sans-serif;
   --second-family: "Inter", sans-serif;
@@ -44,6 +47,8 @@ body {
 
   --images-normal: 16px;
   --images-avatar: 120px;
+  --images-article-width: 160px;
+  --images-article-height: 120px;
 }
 
 @font-face { font-family: 'Inter'; src: url('./assets/fonts/Inter_24pt-Thin.ttf') format('truetype'); font-weight: 100; font-style: normal; }

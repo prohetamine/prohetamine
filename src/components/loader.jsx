@@ -20,8 +20,15 @@ const Loader = ({ children }) => {
 
   useEffect(() => {
     const handleLoad = async () => {
-      await new Promise(res => loader.load('./logo.glb', res))
-      setIsLoaded(true)
+      try {
+        await Promise.all([
+          new Promise(res => loader.load('./logo.glb', res)),
+        ])
+        setIsLoaded(true)
+      } catch (e) {
+        console.error('Ошибка загрузки ассетов:', e)
+        setIsLoaded(true)
+      }
     }
 
     const timeId = setTimeout(handleLoad, 500)

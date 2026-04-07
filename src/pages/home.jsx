@@ -1,6 +1,7 @@
 import { useWindowSize } from 'usehooks-ts'
 import { useLocation, useNavigate } from 'react-router'
 import { useEffect, useRef } from 'react'
+
 import ThreeBackground from './../components/three-background.jsx'
 import { Avatar, BigFont700, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, MicroFont400, MicroFont500, NanoFont500, NormalFont400, NormalFont500, SmallFont500 } from './../components/global.jsx'
 import avatar from './../assets/avatar.png?inline'
@@ -10,6 +11,11 @@ import articlesIcon from './../assets/icons/articles.svg?react'
 import meIcon from './../assets/icons/me.svg?react'
 import web3Icon from './../assets/icons/web3.svg?react'
 import telegramIcon from './../assets/icons/telegram.svg?react'
+
+import Articles from '../components/articles.jsx'
+import Web3Emotions from '../components/web3-emotions.jsx'
+import Footer from '../components/footer.jsx'
+import articles from '../assets/articles.js'
 
 const Home = () => {
   const { width } = useWindowSize()
@@ -94,7 +100,7 @@ const Home = () => {
             {
               isArticles 
                 ? (
-                  <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>14 статей</NanoFont500>
+                  <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>{articles.length} статей</NanoFont500>
                 )
                 : (
                   <Flex gap='var(--spaces-small)' direction='row'>
@@ -115,11 +121,7 @@ const Home = () => {
           {
             isArticles 
               ? (
-                <Flex gap='var(--spaces-normal)' justify='flex-start' style={{ width: '100%' }}>
-                  <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                    Загружу позже ... сайт в разработке
-                  </NormalFont400>
-                </Flex>
+                <Articles />
               )
               : (
                 <Flex gap='var(--spaces-normal)' justify='flex-start' style={{ width: '100%' }}>
@@ -240,41 +242,8 @@ const Home = () => {
           }
           <HorizontalLine />
         </Flex>
-        <Flex gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
-          <Control whileTap={{ y: 2, scale: 0.97 }}>
-            <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>ツ</MicroFont500>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>0</MicroFont500>
-            </Flex>
-          </Control>
-          <Control whileTap={{ y: 2, scale: 0.97 }}>
-            <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>٩(×̯×)۶</MicroFont500>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>0</MicroFont500>
-            </Flex>
-          </Control>
-          <Control whileTap={{ y: 2, scale: 0.97 }}>
-            <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>★</MicroFont500>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>0</MicroFont500>
-            </Flex>
-          </Control>
-          <Control whileTap={{ y: 2, scale: 0.97 }}>
-            <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>⌬ʲˢ³</MicroFont500>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>0</MicroFont500>
-            </Flex>
-          </Control>
-          <Control whileTap={{ y: 2, scale: 0.97 }}>
-            <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>✖</MicroFont500>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>0</MicroFont500>
-            </Flex>
-          </Control>
-        </Flex>
-        <Flex gap='var(--spaces-normal)'>
-          <MicroFont400 style={{ color: 'var(--colors-based-black)', userSelect: 'none', cursor: 'pointer' }}>...</MicroFont400>
-        </Flex>
+        <Web3Emotions />
+        <Footer />
       </Flex>
     </Flex>
   )

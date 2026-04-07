@@ -129,11 +129,6 @@ export const MicroFont400 = styled(MicroFont)`
     font-weight: 400;
 `
 
-
-
-
-
-
 export const FakeLink = styled(NanoFont500)`
   color: var(--colors-controll-default-color);
   text-decoration: ${props => props.active}; 
