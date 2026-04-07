@@ -23,7 +23,9 @@ const Emotion = ({ emoji }) => {
         >
             <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
                 <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emoji}</MicroFont500>
-                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emotion.value.count}</MicroFont500>
+                {
+                    emotion.value.count && <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emotion.value.count}</MicroFont500>
+                }
             </Flex>
         </Control> 
     )
