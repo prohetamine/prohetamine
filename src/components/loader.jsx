@@ -24,7 +24,7 @@ const Loader = ({ children }) => {
       setIsLoaded(true)
     }
 
-    const timeId = setTimeout(handleLoad)
+    const timeId = setTimeout(handleLoad, 500)
     return () => clearTimeout(timeId)
   }, [])
 
