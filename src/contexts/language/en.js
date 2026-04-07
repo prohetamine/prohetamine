@@ -13,7 +13,7 @@ const en = {
     
     // content
 
-    aboutMe: 'About Me',
+    aboutMe: 'About Me.',
     aboutMeContent: 'Multidisciplinary developer with over 10 years of experience exploring and experimenting with technology. It is my full-time hobby that periodically evolves into professional work. Since late 2025, I have been focusing on blockchain technologies and integrating Web3 into my projects.',
     
     facts: 'Additional Facts.',
