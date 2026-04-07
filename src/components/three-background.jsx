@@ -116,6 +116,10 @@ const ThreeBackground = () => {
 
       let isCancel = false
 
+      instanced.rotation.x = 0.1
+      instanced.rotation.y = 0.1
+      instanced.rotation.z = 0.1
+
       const animate = () => {
         if (!isCancel) {
           requestAnimationFrame(animate)
