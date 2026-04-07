@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
+import hdri from './../assets/hdri.png?inline'
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100px;
@@ -50,17 +52,28 @@ const ThreeBackground = () => {
       )
       camera.position.y = -0.015
       camera.position.z = 1.15
+      const loader = new THREE.TextureLoader()
+      const envMap = loader.load(hdri)
+      envMap.mapping = THREE.EquirectangularReflectionMapping
+
+      scene.environment = envMap
 
       const renderer = new THREE.WebGLRenderer({ antialias: false })
       renderer.setSize(window.innerWidth, window.innerHeight)
-      renderer.setClearColor(0xe8e8e1)
+      renderer.setClearColor(0xdddddd)
+      renderer.shadowMap.enabled = true
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap
+      renderer.physicallyCorrectLights = true
+      renderer.outputColorSpace = THREE.SRGBColorSpace
+      renderer.toneMapping = THREE.ACESFilmicToneMapping
+      renderer.toneMappingExposure = 0.25
       node.appendChild(renderer.domElement)
-          
-      const light = new THREE.PointLight(0xffffff, 15, 110)
-      light.position.set(0, 0, 111)
+      
+      const light = new THREE.PointLight(0xac920f, 10.1, 10)
+      light.position.set(-0.15, 0, 1)
       scene.add(light)
       
-      const ambientLight = new THREE.AmbientLight(0x404040, 1.5)
+      const ambientLight = new THREE.AmbientLight(0xac920f, 20.5)
       scene.add(ambientLight)
       
       let mesh
@@ -73,6 +86,7 @@ const ThreeBackground = () => {
 
       const geometry = mesh.geometry
       const material = Array.isArray(mesh.material) ? mesh.material[0] : mesh.material
+      material.roughness = 0.2
 
       const count = 300
           , radius = 1
@@ -95,6 +109,7 @@ const ThreeBackground = () => {
         dummy.position.set(x * radius, y * radius, z * radius)
         dummy.lookAt(0, 0, 0)
         dummy.rotateX(Math.PI / 2)
+        dummy.scale.set(-1, 1, 1)
         dummy.updateMatrix()
         instanced.setMatrixAt(i, dummy.matrix)
       }
@@ -113,7 +128,7 @@ const ThreeBackground = () => {
         const x = Math.cos(instanced.rotation.y) * 2;
         const y = Math.sin(instanced.rotation.y) * 2;
 
-        light.position.set(x, y, 1)
+        light.position.set(-0.15 + x, y, 1)
 
         renderer.render(scene, camera)
       }
