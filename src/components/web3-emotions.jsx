@@ -13,24 +13,20 @@ const Emotion = ({ emoji }) => {
         }
     }
 
-    return (emotion.status === 'success' || emotion.value.count) 
-                ? (
-                    <Control 
-                        whileTap={{ y: 2, scale: 0.97 }}
-                        onTap={handleEmotion}
-                        style={{ 
-                            order: -emotion.value.count
-                        }}
-                    >
-                        <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
-                            <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emoji}</MicroFont500>
-                            <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emotion.value.count}</MicroFont500>
-                        </Flex>
-                    </Control> 
-                )
-                : (
-                    null
-                )
+    return (
+        <Control 
+            whileTap={{ y: 2, scale: 0.97 }}
+            onTap={handleEmotion}
+            style={{ 
+                order: -emotion.value.count
+            }}
+        >
+            <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
+                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emoji}</MicroFont500>
+                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emotion.value.count}</MicroFont500>
+            </Flex>
+        </Control> 
+    )
 }
 
 const Web3Emotions = () => (
