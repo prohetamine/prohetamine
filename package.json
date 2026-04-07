@@ -19,6 +19,8 @@
     "stas-pay": "^0.1.226",
     "styled-components": "^6.3.12",
     "three": "^0.183.2",
+    "use-local-storage": "^3.0.0",
+    "use-storage-state": "^7.0.0",
     "usehooks-ts": "^3.1.1",
     "vite-plugin-glsl": "^1.6.0",
     "vite-plugin-svgr": "^5.2.0"

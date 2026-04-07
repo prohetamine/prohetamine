@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Control, Flex, Icon, MicroFont500 } from '../components/global.jsx'
 import image404 from './../assets/404.gif?inline'
 import arrowLeftIcon from './../assets/icons/arrow-left.svg?react'
+import { LanguageContext } from '../contexts/language/index.jsx'
 
 const Image404 = styled.div`
   background-image: url('${image404}');
@@ -14,7 +15,8 @@ const Image404 = styled.div`
 const NotFound = () => {
   const [timer, setTimer] = useState(null)
       , navigate = useNavigate()
-
+      , lang = useContext(LanguageContext)
+      
   useEffect(() => {
     const timeId = setTimeout(() => {
       setTimer(11)
@@ -56,7 +58,7 @@ const NotFound = () => {
             align='center'
           >
             <Icon src={arrowLeftIcon} />
-            <MicroFont500 style={{ color: 'var(--colors-controll-default-color)', userSelect: 'none' }}>Назад {timer ? `(${timer})` : ''}</MicroFont500>
+            <MicroFont500 style={{ color: 'var(--colors-controll-default-color)', userSelect: 'none' }}>{lang.data.back} {timer ? `(${timer})` : ''}</MicroFont500>
           </Flex>
         </Control>
       </Flex>

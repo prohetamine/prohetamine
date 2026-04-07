@@ -1,6 +1,7 @@
 import { useWindowSize } from 'usehooks-ts'
 import { useLocation, useNavigate } from 'react-router'
-import { useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
+import { LanguageContext } from './../contexts/language'
 
 import ThreeBackground from './../components/three-background.jsx'
 import { Avatar, BigFont700, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, MicroFont400, MicroFont500, NanoFont500, NormalFont400, NormalFont500, SmallFont500 } from './../components/global.jsx'
@@ -22,6 +23,8 @@ const Home = () => {
       , navigate = useNavigate()
       , location = useLocation()
       , contactsRef = useRef()
+
+  const lang = useContext(LanguageContext)
 
   const isArticles = location.pathname === '/articles'
       , isContacts = location.pathname === '/contacts'
@@ -59,9 +62,9 @@ const Home = () => {
             <Flex gap='var(--spaces-small)' align='flex-start'>
               <BigFont700 style={{ color: 'var(--colors-black)', whiteSpace: 'nowrap' }}>Stas Prohetamine</BigFont700>
               <Flex gap='var(--spaces-small)' direction='row'>
-                <SmallFont500 style={{ color: 'var(--colors-gray)' }}>Россия</SmallFont500>
+                <SmallFont500 style={{ color: 'var(--colors-gray)' }}>{lang.data.location}</SmallFont500>
                 <Dot />
-                <SmallFont500 style={{ color: 'var(--colors-gray)' }}>27 лет</SmallFont500>
+                <SmallFont500 style={{ color: 'var(--colors-gray)' }}>27 {lang.data.age}</SmallFont500>
               </Flex>
             </Flex>
           </Flex>
@@ -80,7 +83,7 @@ const Home = () => {
               whileTap={{ y: 2, scale: 0.97 }}
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{isArticles ? 'Я' : 'Статьи'}</MicroFont500>
+                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{isArticles ? lang.data.meBtn : lang.data.articlesBtn}</MicroFont500>
                 <Icon src={isArticles ? meIcon : articlesIcon} />
               </Flex>
             </Control>
@@ -89,7 +92,7 @@ const Home = () => {
               whileTap={{ y: 2, scale: 0.97 }}
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Контакты</MicroFont500>
+                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.contactsBtn}</MicroFont500>
                 <Icon src={contactsIcon} />
               </Flex>
             </Control>
@@ -100,19 +103,27 @@ const Home = () => {
             {
               isArticles 
                 ? (
-                  <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>{articles.length} статей</NanoFont500>
+                  <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>{articles.length} {lang.data.articlesCount}</NanoFont500>
                 )
                 : (
                   <Flex gap='var(--spaces-small)' direction='row'>
                     <Flex gap='var(--spaces-nano)' direction='row'>
-                      <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>язык:</NanoFont500>
+                      <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>{lang.data.lang}:</NanoFont500>
                       <Flex gap='var(--spaces-micro)' direction='row'>
-                        <FakeLink whileTap={{ scale: 0.9 }} active='none'>ru</FakeLink>
-                        <FakeLink whileTap={{ scale: 0.9 }} active='underline'>en</FakeLink>
+                        <FakeLink 
+                          whileTap={{ scale: 0.9 }} 
+                          onTap={() => lang.setLang('ru')}
+                          active={lang.lang !== 'ru' ? 'underline' : 'none'}
+                        >ru</FakeLink>
+                        <FakeLink 
+                          whileTap={{ scale: 0.9 }} 
+                          onTap={() => lang.setLang('en')}
+                          active={lang.lang !== 'en' ? 'underline' : 'none'}
+                        >en</FakeLink>
                       </Flex>
                     </Flex>
                     <Dot />
-                    <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>5 апреля 2025</NanoFont500>
+                    <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>{lang.data.mainUpdate}</NanoFont500>
                   </Flex>
                 )
             }
@@ -126,83 +137,41 @@ const Home = () => {
               : (
                 <Flex gap='var(--spaces-normal)' justify='flex-start' style={{ width: '100%' }}>
                   <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>Обо мне.</NormalFont500> Мультидисциплинарный разработчик, больше 10 лет изучаю и экспериментирую с технологиями — это моё фулл-тайм хобби которое периодами перерастает в работу. С конца 2025 года изучаю блокчейн технологии и интегрирую Web3 в свои проекты.
+                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>{lang.data.aboutMe}</NormalFont500> {lang.data.aboutMeContent}
                   </NormalFont400>
                   <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>Некоторые дополнительные факты.</NormalFont500> Увлекаюсь разработкой электроники, пишу статьи на тему технологий и не только, преподавал программирование, с недавнего времени осваиваю видео монтаж и создание 3D моделей в Blender.
-                  </NormalFont400>
-                  <ul style={{ paddingLeft: '25px', margin: '0px' }}>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        В 2015 в школе начал верстать, первый проект магазин приложений на полках в стиле IOS 6 iBOOKS.
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Первый язык программирования Action Script 2.0, язык для создания Flash игр и интерактивной графики.
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        В 2016 сделал первую браузерную игру на JavaScript и Canvas (в духе Flappy Bird)
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        После статьи на Хабре получил приглашение писать для Хакер.ру
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        В 2018 за одну ночь разработал технологию для бизнеса и получил долю в нем.
-                      </NormalFont400>
-                    </li>
-                  </ul>
-                  <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>Работа.</NormalFont500> Являюсь действующим фрилансером и открыт к предложениям, партнерству или коллаборации. 
-                  </NormalFont400>
-                  <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>Разработка.</NormalFont500> И многое другое. 
+                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>{lang.data.facts}</NormalFont500> {lang.data.factsContent}
                   </NormalFont400>
                   <ul style={{ paddingLeft: '25px', margin: '0px' }}>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Веб-приложения (React, Styled-Components, MobX, Express, MongoDB)
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Браузерные расширения (Manifest v3)
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Telegram-ботов (Telegraf)
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Смарт-контракты (Solidity)
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Десктоп-приложения (Electron)
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Проекты на Arduino
-                      </NormalFont400>
-                    </li>
-                    <li>
-                      <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                        Автоматизацию (Puppeteer / BAS)
-                      </NormalFont400>
-                    </li>
+                    {
+                      lang.data.factsList.map((fact, key) => (
+                        <li key={key}>
+                          <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
+                            {fact}
+                          </NormalFont400>
+                        </li>
+                      ))
+                    }
                   </ul>
                   <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
-                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>Контакты и медиа.</NormalFont500> Раньше всего отвечу в телеграм.
+                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>{lang.data.work}</NormalFont500> {lang.data.workContent}
+                  </NormalFont400>
+                  <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
+                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>{lang.data.development}</NormalFont500> {lang.data.developmentContent}
+                  </NormalFont400>
+                  <ul style={{ paddingLeft: '25px', margin: '0px' }}>
+                    {
+                      lang.data.techList.map((fact, key) => (
+                        <li key={key}>
+                          <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
+                            {fact}
+                          </NormalFont400>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                  <NormalFont400 style={{ color: 'var(--colors-based-black)', width: '100%' }}>
+                    <NormalFont500 style={{ color: 'var(--colors-based-black)', display: 'inline-block' }}>{lang.data.contacts}</NormalFont500> {lang.data.contactsContent}
                   </NormalFont400>
                   <Flex ref={contactsRef} gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
                     <Control 

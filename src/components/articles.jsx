@@ -3,7 +3,8 @@ import articles from "../assets/articles"
 import { BigFont700, Control, Flex, Icon, MicroFont500, NormalFont400 } from "./global"
 
 import linkIcon from './../assets/icons/link.svg?react'
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { LanguageContext } from "../contexts/language"
 
 const ArticleImage = styled.div`
     background-image: url('${props => props.src}');
@@ -53,6 +54,7 @@ const Description = styled(NormalFont400)`
 
 const Article = ({ url, image, title, description, readIn, color }) => {
     const [hover, setHover] = useState(false)
+        , lang = useContext(LanguageContext)
 
     return (
         <Control 
@@ -91,7 +93,7 @@ const Article = ({ url, image, title, description, readIn, color }) => {
                                     textDecoration: hover ? 'underline' : 'none', 
                                     textDecorationSkipInk: 'none' 
                                 }}
-                            >{readIn}</MicroFont500>
+                            >{lang.data.readIn} {readIn}</MicroFont500>
                             <Icon src={linkIcon} />
                         </Flex>                                
                     </Flex>

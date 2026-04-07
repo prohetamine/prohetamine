@@ -8,7 +8,7 @@ const articles = [
     {
         title: 'AI Camera от Prohetamine',
         description: 'Привет! Давай сделаем камеру для управления жестами, почти как у Lovense, она будет также управляться с помощью жестов.',
-        readIn: 'Читать в Telegraf',
+        readIn: 'Telegraf',
         image: image1,
         color: '--colors-controll-default-background-alt-telegraf',
         url: 'https://telegra.ph/AI-Camera-ot-Prohetamine-03-04'
@@ -16,7 +16,7 @@ const articles = [
     {
         title: 'Сказ о том, как программист скульптуру создавал',
         description: 'Некоторое время назад у меня было совершенно много времени из-за отсутствия дел, как ни странно, я совершенно не знал, чем себя занять и все из-за того что, не мог программировать — заниматься любимым делом.',
-        readIn: 'Читать на Pikabu',
+        readIn: 'Pikabu',
         image: image2,
         color: '--colors-controll-default-background-alt-pikabu',
         url: 'https://pikabu.ru/story/skaz_o_tom_kak_programmist_skulpturu_sozdaval_8653314'
@@ -24,7 +24,7 @@ const articles = [
     {
         title: 'Электроника всем начинающим',
         description: 'Сегодня мы сделаем одно из самых бесполезных устройств из тех, что можно собрать, но как показывает жизнь, лучше сделать что-то, чем не сделать ничего. Тем не менее, в защиту этой бесполезности можно сказать только что-то вроде: много ли интересных дел, которыми мы занимаемся являются хоть сколько бы полезными?',
-        readIn: 'Читать на Хабр',
+        readIn: 'Хабр',
         image: image3,
         color: '--colors-controll-default-background-alt-habr',
         url: 'https://habr.com/ru/post/593421/'
@@ -32,7 +32,7 @@ const articles = [
     {
         title: 'Публикуем полезное расширение для Хабр Фриланса',
         description: 'Это вторая часть, продолжающая серию статей про связанных с разработкой расширения для фрилансеров. С первой статьей, где мы занимаемся разработкой расширения, вы можете ознакомиться здесь. Также найти весь исходный код на GitHub и само расширение в Chrome Web Store. В этой статье я расскажу, как опубликовать расширение в Chrome Web Store. С наступающим Фрилансер. Будь сильней, быстрей, выше.',
-        readIn: 'Читать на Хабр',
+        readIn: 'Хабр',
         image: image4,
         color: '--colors-controll-default-background-alt-habr',
         url: 'https://habr.com/ru/post/596417/'
@@ -40,7 +40,7 @@ const articles = [
     {
         title: 'Создаем полезное расширение для Хабр Фриланса',
         description: 'Сегодня сделаем расширение для фрилансеров очень хорошей биржи Хабр Фриланс, я там сам работал еще в 2018 году, тогда сайт назывался еще Фрилансим.',
-        readIn: 'Читать на Хабр',
+        readIn: 'Хабр',
         image: image5,
         color: '--colors-controll-default-background-alt-habr',
         url: 'https://habr.com/ru/post/592967/'
