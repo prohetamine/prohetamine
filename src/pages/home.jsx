@@ -111,12 +111,12 @@ const Home = () => {
                       <NanoFont500 style={{ color: 'var(--colors-placeholder)' }}>{lang.data.lang}:</NanoFont500>
                       <Flex gap='var(--spaces-micro)' direction='row'>
                         <FakeLink 
-                          whileTap={{ scale: 0.9 }} 
+                          whileTap={lang.lang !== 'ru' ? { scale: 0.9 } : {}} 
                           onTap={() => lang.setLang('ru')}
                           active={lang.lang !== 'ru' ? 'underline' : 'none'}
                         >ru</FakeLink>
                         <FakeLink 
-                          whileTap={{ scale: 0.9 }} 
+                          whileTap={lang.lang !== 'en' ? { scale: 0.9 } : {}} 
                           onTap={() => lang.setLang('en')}
                           active={lang.lang !== 'en' ? 'underline' : 'none'}
                         >en</FakeLink>
