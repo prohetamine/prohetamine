@@ -6,6 +6,7 @@ import { StasPayProvider } from 'stas-pay'
 import './index.css'
 import Home from './pages/home.jsx'
 import NotFound from './pages/not-found.jsx'
+import Loader from './components/loader.jsx'
 
 const config = {
   metadata: {
@@ -18,22 +19,24 @@ const config = {
   host: '/'
 }
 
-alert('Сайт ещё в разработке ٩(×̯×)۶')
+//alert('Сайт ещё в разработке ٩(×̯×)۶')
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Redstone.Provider config={config}>
       <StasPayProvider>
-        <BrowserRouter basename="/">
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path='/bio' element={<Home />} />
-            <Route path='/articles' element={<Home />} />
-            <Route path='/contacts' element={<Home />} />
-            <Route path='*'  element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <Loader>
+          <BrowserRouter basename="/">
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path='/bio' element={<Home />} />
+              <Route path='/articles' element={<Home />} />
+              <Route path='/contacts' element={<Home />} />
+              <Route path='*'  element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </Loader>
       </StasPayProvider>
     </Redstone.Provider>
-  </StrictMode>,
+  </StrictMode>
 )

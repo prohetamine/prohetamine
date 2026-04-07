@@ -1,14 +1,15 @@
 import { useWindowSize } from 'usehooks-ts'
+import { useLocation, useNavigate } from 'react-router'
+import { useEffect, useRef } from 'react'
 import ThreeBackground from './../components/three-background.jsx'
 import { Avatar, BigFont700, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, MicroFont400, MicroFont500, NanoFont500, NormalFont400, NormalFont500, SmallFont500 } from './../components/global.jsx'
+import avatar from './../assets/avatar.png?inline'
 
 import contactsIcon from './../assets/icons/contacts.svg?react'
 import articlesIcon from './../assets/icons/articles.svg?react'
 import meIcon from './../assets/icons/me.svg?react'
 import web3Icon from './../assets/icons/web3.svg?react'
 import telegramIcon from './../assets/icons/telegram.svg?react'
-import { useLocation, useNavigate } from 'react-router'
-import { useEffect, useRef } from 'react'
 
 const Home = () => {
   const { width } = useWindowSize()
@@ -48,7 +49,7 @@ const Home = () => {
       >
         <Flex gap='var(--spaces-normal)' direction='row' align='flex-end' style={{ width: '100%' }}>
           <Flex gap='var(--spaces-normal)' align='flex-start'>
-            <Avatar />
+            <Avatar src={avatar} />
             <Flex gap='var(--spaces-small)' align='flex-start'>
               <BigFont700 style={{ color: 'var(--colors-black)', whiteSpace: 'nowrap' }}>Stas Prohetamine</BigFont700>
               <Flex gap='var(--spaces-small)' direction='row'>

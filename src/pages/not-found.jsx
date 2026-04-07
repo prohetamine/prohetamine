@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import { Control, Flex, Icon, MicroFont500 } from '../components/global.jsx'
-
-import image404 from './../assets/404.gif'
-import arrowLeftIcon from './../assets/icons/arrow-left.svg?react'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
+import { Control, Flex, Icon, MicroFont500 } from '../components/global.jsx'
+import image404 from './../assets/404.gif?inline'
+import arrowLeftIcon from './../assets/icons/arrow-left.svg?react'
 
 const Image404 = styled.div`
   background-image: url('${image404}');
@@ -14,8 +13,7 @@ const Image404 = styled.div`
 
 const NotFound = () => {
   const [timer, setTimer] = useState(null)
-
-  const navigate = useNavigate()
+      , navigate = useNavigate()
 
   useEffect(() => {
     const timeId = setTimeout(() => {

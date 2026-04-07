@@ -31,7 +31,7 @@ export const Icon = motion(
 )
 
 export const Avatar = styled.div`
-  background-image: url('${avatar}');
+  background-image: url('${props => props.src}');
   border: 1px solid var(--colors-border);
   border-radius: var(--radius-max);
   width: var(--images-avatar);
