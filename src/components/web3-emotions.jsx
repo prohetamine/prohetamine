@@ -24,7 +24,11 @@ const Emotion = ({ emoji }) => {
             <Flex gap='var(--spaces-small)' padding='var(--spaces-normal) var(--spaces-big)' direction='row' justify='center' align='center'>
                 <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emoji}</MicroFont500>
                 {
-                    emotion.value.count && <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emotion.value.count}</MicroFont500>
+                    emotion.value.count 
+                        ? (
+                            <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{emotion.value.count}</MicroFont500>
+                        )
+                        : null
                 }
             </Flex>
         </Control> 
@@ -32,7 +36,11 @@ const Emotion = ({ emoji }) => {
 }
 
 const Web3Emotions = () => (
-    <Flex gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
+    <Flex 
+        gap='var(--spaces-normal)' 
+        direction='row' 
+        style={{ width: '100%', flexWrap: 'wrap' }}
+    >
         <Emotion emoji='ツ' />
         <Emotion emoji='⌬ʲˢ³' />
         <Emotion emoji='٩(×̯×)۶' />
