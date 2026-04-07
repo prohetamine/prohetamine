@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion'
 import { forwardRef } from 'react'
 import styled from 'styled-components'
-import avatar from './../assets/avatar.png'
 
 export const Flex = styled(motion.div)`
     display: flex;
@@ -94,39 +93,39 @@ const MicroFont = styled(FontFamily)`
 `
 
 export const BigFont700 = styled(BigFont)`
-    font-weight: 700;
+  font-weight: 700;
 `
 
 /// 
 
 export const NormalFont500 = styled(NormalFont)`
-    font-weight: 500;
+  font-weight: 500;
 `
 
 export const NormalFont400 = styled(NormalFont)`
-    font-weight: 400;
+  font-weight: 400;
 `
 
 ///
 
 export const SmallFont500 = styled(SmallFont)`
-    font-weight: 500;
+  font-weight: 500;
 `
 
 /// 
 
 export const NanoFont500 = styled(NanoFont)`
-    font-weight: 500;
+  font-weight: 500;
 `
 
 ///
 
 export const MicroFont500 = styled(MicroFont)`
-    font-weight: 500;
+  font-weight: 500;
 `
 
 export const MicroFont400 = styled(MicroFont)`
-    font-weight: 400;
+  font-weight: 400;
 `
 
 export const FakeLink = styled(NanoFont500)`
