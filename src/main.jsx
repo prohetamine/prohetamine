@@ -5,9 +5,11 @@ import * as Redstone from '@prohetamine/redstone'
 import { StasPayProvider } from 'stas-pay'
 import './index.css'
 import Home from './pages/home.jsx'
+import Stas from './pages/stas.jsx'
 import NotFound from './pages/not-found.jsx'
 import Loader from './components/loader.jsx'
 import { LanguageProvider } from './contexts/language'
+import App from './app.jsx'
 
 const config = {
   metadata: {
@@ -28,10 +30,13 @@ createRoot(document.getElementById('root')).render(
           <Loader>
             <BrowserRouter basename="/">
               <Routes>
-                <Route index element={<Home />} />
-                <Route path='/bio' element={<Home />} />
-                <Route path='/articles' element={<Home />} />
-                <Route path='/contacts' element={<Home />} />
+                <Route path='/' element={<App />}>
+                  <Route index element={<Home />} />
+                  <Route path='/bio' element={<Home />} />
+                  <Route path='/articles' element={<Home />} />
+                  <Route path='/contacts' element={<Home />} />
+                  <Route path='/stas' element={<Stas />} />  
+                </Route>
                 <Route path='*'  element={<NotFound />} />
               </Routes>
             </BrowserRouter>

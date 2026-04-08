@@ -3,8 +3,17 @@ import image2 from './articles/1638256412121957268.jpg?inline'
 import image3 from './articles/267b4555da804c803c0da8817e87cf0b.jpg?inline'
 import image4 from './articles/afe1fe3a5f6c8513b438ad5f4027b503.png?inline'
 import image5 from './articles/2b10724480d20d6c6dd6f72b08170443.jpg?inline'
+import image6 from './articles/232f434534f34f34t4g3.png?inline'
 
 const articles = [
+    {
+        title: 'STAS Coin',
+        description: 'О целях, возможностях и о превращении из meme coin в personal coin.',
+        readIn: '',
+        image: image6,
+        color: '--colors-controll-default-background',
+        url: '/stas'
+    },
     {
         title: 'AI Camera от Prohetamine',
         description: 'Привет! Давай сделаем камеру для управления жестами, почти как у Lovense, она будет также управляться с помощью жестов.',

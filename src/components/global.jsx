@@ -31,11 +31,14 @@ export const Icon = motion(
 
 export const Avatar = styled.div`
   background-image: url('${props => props.src}');
+  background-size: cover;
+  background-position: center center;
   border: 1px solid var(--colors-border);
   border-radius: var(--radius-max);
   width: var(--images-avatar);
   height: var(--images-avatar);
   box-sizing: border-box;
+
 `
 
 export const Control = styled(motion.div)`
@@ -138,4 +141,29 @@ export const FakeLink = styled(NanoFont500)`
   -ms-user-select: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+`
+
+export const Text = styled(NormalFont400)`
+  color: var(--colors-based-black);
+  width: 100%; 
+`
+
+export const Bold = styled(NormalFont500)`
+  color: var(--colors-based-black); 
+  display: inline-block;
+`
+
+export const Link = styled(Bold)`
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    text-decoration: none;
+  }
 `

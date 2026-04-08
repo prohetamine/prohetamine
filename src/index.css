@@ -24,6 +24,8 @@ body {
   --colors-controll-default-background-alt-habr: linear-gradient(148deg, rgba(0, 92, 129, 0.1), rgba(0, 92, 129, 0.12));
   --colors-controll-default-background-alt-telegraf: linear-gradient(148deg, rgba(63, 63, 63, 0.1), rgba(63, 63, 63, 0.12));
   --colors-controll-default-background-alt-pikabu: linear-gradient(148deg, rgba(158, 134, 1, 0.1), rgba(158, 134, 1, 0.12));
+  --colors-controll-default-background-alt-uniswap: linear-gradient(148deg, rgba(158, 1, 153, 0.1), rgba(158, 1, 153, 0.12));
+  --colors-controll-default-background-alt-dex: linear-gradient(148deg, rgba(53, 53, 53, 0.1), rgba(53, 53, 53, 0.12));
 
   --font-family: "Roboto", sans-serif;
   --second-family: "Inter", sans-serif;

@@ -5,6 +5,7 @@ import { BigFont700, Control, Flex, Icon, MicroFont500, NormalFont400 } from "./
 import linkIcon from './../assets/icons/link.svg?react'
 import { useContext, useState } from "react"
 import { LanguageContext } from "../contexts/language"
+import { useNavigate } from "react-router"
 
 const ArticleImage = styled.div`
     background-image: url('${props => props.src}');
@@ -55,11 +56,12 @@ const Description = styled(NormalFont400)`
 const Article = ({ url, image, title, description, readIn, color }) => {
     const [hover, setHover] = useState(false)
         , lang = useContext(LanguageContext)
+        , navigate = useNavigate()
 
     return (
         <Control 
             whileTap={{ y: 2, scale: 0.998 }} 
-            onTap={() => window.location = url}
+            onTap={() => url.match(/^https/) ? window.location = url : navigate(url)}
             onHoverStart={() => setHover(true)}
             onHoverEnd={() => setHover(false)}
             style={{ width: '100%', background: `var(${color})` }}
@@ -83,7 +85,7 @@ const Article = ({ url, image, title, description, readIn, color }) => {
                                 textOverflow: 'ellipsis'
                             }}
                         >{title}</BigFont700>
-                        <Description>{description} ...</Description>
+                        <Description>{description}</Description>
                     </Flex>
                     <Flex align='flex-end' style={{ width: '100%' }}>
                         <Flex direction='row' gap='var(--spaces-small)'>
@@ -93,7 +95,7 @@ const Article = ({ url, image, title, description, readIn, color }) => {
                                     textDecoration: hover ? 'underline' : 'none', 
                                     textDecorationSkipInk: 'none' 
                                 }}
-                            >{lang.data.readIn} {readIn}</MicroFont500>
+                            >{readIn ? lang.data.readIn : lang.data.read} {readIn}</MicroFont500>
                             <Icon src={linkIcon} />
                         </Flex>                                
                     </Flex>
