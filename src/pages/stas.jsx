@@ -45,7 +45,7 @@ const Stas = () => {
             whileTap={{ y: 2, scale: 0.97 }}
           >
             <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.contactsBtn}</MicroFont500>
+              <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.developerBtn}</MicroFont500>
               <Icon src={contactsIcon} />
             </Flex>
           </Control>
