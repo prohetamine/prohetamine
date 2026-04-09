@@ -22,7 +22,7 @@ const Loader = ({ children }) => {
     const handleLoad = async () => {
       try {
         await Promise.all([
-          new Promise(res => loader.load('./logo.glb', res)),
+          new Promise(res => loader.load('/logo.glb', res)),
         ])
         setIsLoaded(true)
       } catch (e) {

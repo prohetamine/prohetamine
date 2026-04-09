@@ -29,7 +29,7 @@ const ThreeBackground = () => {
       const loader = new GLTFLoader();
 
       const model = (
-          await new Promise(res => loader.load('./logo.glb', res))
+          await new Promise(res => loader.load('/logo.glb', res))
       ).scene
 
       setModel(model)
