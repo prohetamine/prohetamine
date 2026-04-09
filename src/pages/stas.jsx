@@ -111,7 +111,7 @@ const Stas = () => {
             }
           </ul>
           <Text>
-            <Bold>{lang.data.stasPage[25]}</Bold> {lang.data.stasPage[26]} <Bold>{lang.data.stasPage[27]}</Bold>
+            <Bold>{lang.data.stasPage[25]}</Bold> {lang.data.stasPage[26]} <Bold style={{ overflowWrap: 'break-word', width: '100%' }}>{lang.data.stasPage[27]}</Bold>
           </Text>
           <Flex ref={contactsRef} gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
             <Control 
