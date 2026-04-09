@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
-import * as Redstone from '@prohetamine/redstone'
+import { RedstoneProvider } from '@prohetamine/redstone'
 import { StasPayProvider } from 'stas-pay'
 import './index.css'
 import Home from './pages/home.jsx'
@@ -14,7 +14,7 @@ import App from './app.jsx'
 const config = {
   metadata: {
     name: 'Stas Prohetamine',
-    description: 'My space website  ⌬ʲˢ³',
+    description: 'My space website ⌬ʲˢ³',
     url: 'https://prohetamine.ru',
     icons: ['https://prohetamine.ru/icon.svg']
   },
@@ -25,10 +25,10 @@ const config = {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LanguageProvider>
-      <Redstone.Provider config={config}>
+      <RedstoneProvider config={config}>
         <StasPayProvider>
           <Loader>
-            <BrowserRouter basename="/">
+            <BrowserRouter basename='/'>
               <Routes>
                 <Route path='/' element={<App />}>
                   <Route index element={<Home />} />
@@ -42,7 +42,7 @@ createRoot(document.getElementById('root')).render(
             </BrowserRouter>
           </Loader>
         </StasPayProvider>
-      </Redstone.Provider>
+      </RedstoneProvider>
     </LanguageProvider>
   </StrictMode>
 )
