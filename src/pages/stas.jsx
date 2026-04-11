@@ -15,7 +15,6 @@ import otcIcon from './../assets/icons/otc.svg?react'
 
 import Web3Emotions from '../components/web3-emotions.jsx'
 import Footer from '../components/footer.jsx'
-import Coin from '../components/coin.jsx'
 
 const Stas = () => {
   const { width } = useWindowSize()
@@ -94,12 +93,9 @@ const Stas = () => {
           <Text>
             <Bold>{lang.data.stasPage[19]}</Bold> {lang.data.stasPage[20]}
           </Text>
-          <Flex gap='var(--spaces-normal)' justify='flex-start' align='flex-start' style={{ width: '100%' }}>
-            <Text>
-              {lang.data.stasPage[21]} <Bold>{lang.data.stasPage[22]}</Bold>
-            </Text>
-            <Coin width='50px' />
-          </Flex>
+          <Text>
+            {lang.data.stasPage[21]} <Bold>{lang.data.stasPage[22]}</Bold>
+          </Text>
           <Text>
             {lang.data.stasPage[23]}
           </Text>
