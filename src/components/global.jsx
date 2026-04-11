@@ -29,6 +29,20 @@ export const Icon = motion(
   ))
 )
 
+export const Image = motion(
+  forwardRef(({ src: Icon, style, ...props }, ref) => (
+    <Icon
+      ref={ref}
+      style={{ 
+        width: '100%', 
+        outline: 'none', 
+        ...style 
+      }}
+      {...props}
+    />
+  ))
+)
+
 export const Avatar = styled.div`
   background-image: url('${props => props.src}');
   background-size: cover;

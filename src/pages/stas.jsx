@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { useContext, useRef } from 'react'
 import { LanguageContext } from './../contexts/language'
 
-import { Avatar, BigFont700, Bold, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, MicroFont500, NanoFont500, SmallFont500, Text, Link } from './../components/global.jsx'
+import { Avatar, BigFont700, Bold, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, MicroFont500, NanoFont500, SmallFont500, Text, Link, Image } from './../components/global.jsx'
 import avatar from './../assets/stas.png?inline'
 
 import contactsIcon from './../assets/icons/contacts.svg?react'
@@ -15,6 +15,7 @@ import otcIcon from './../assets/icons/otc.svg?react'
 
 import Web3Emotions from '../components/web3-emotions.jsx'
 import Footer from '../components/footer.jsx'
+import Coin from '../components/coin.jsx'
 
 const Stas = () => {
   const { width } = useWindowSize()
@@ -93,9 +94,12 @@ const Stas = () => {
           <Text>
             <Bold>{lang.data.stasPage[19]}</Bold> {lang.data.stasPage[20]}
           </Text>
-          <Text>
-            {lang.data.stasPage[21]} <Bold>{lang.data.stasPage[22]}</Bold>
-          </Text>
+          <Flex gap='var(--spaces-normal)' justify='flex-start' align='flex-start' style={{ width: '100%' }}>
+            <Text>
+              {lang.data.stasPage[21]} <Bold>{lang.data.stasPage[22]}</Bold>
+            </Text>
+            <Coin width='50px' />
+          </Flex>
           <Text>
             {lang.data.stasPage[23]}
           </Text>
