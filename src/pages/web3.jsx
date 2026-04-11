@@ -10,6 +10,7 @@ import swapIcon from './../assets/icons/swap.svg?react'
 import dappsIcon from './../assets/icons/dapps.svg?react'
 import requestCoinsIcon from './../assets/icons/request-coins.svg?react'
 import airdropIcon from './../assets/icons/airdrop.svg?react'
+import bugIcon from './../assets/icons/bug.svg?react'
 
 import Web3Emotions from '../components/web3-emotions.jsx'
 import Footer from '../components/footer.jsx'
@@ -110,16 +111,28 @@ const Web3 = () => {
                   </>
                 )
                 : (
-                  <Control 
-                    onTap={() => window.location = 'tg://resolve?domain=prohetamines'}
-                    whileTap={{ y: 2, scale: 0.97 }} 
-                    style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
-                  >
-                    <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                      <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Get tBNB & tSTAS</MicroFont500>
-                      <Icon src={requestCoinsIcon} />
-                    </Flex>
-                  </Control>
+                  <>
+                    <Control 
+                      onTap={() => window.location = 'tg://resolve?domain=prohetamines'}
+                      whileTap={{ y: 2, scale: 0.97 }} 
+                      style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                    >
+                      <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Get tBNB & tSTAS</MicroFont500>
+                        <Icon src={requestCoinsIcon} />
+                      </Flex>
+                    </Control>
+                    <Control 
+                      onTap={() => window.location = 'tg://resolve?domain=prohetamine'}
+                      whileTap={{ y: 2, scale: 0.97 }} 
+                      style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                    >
+                      <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Bug report</MicroFont500>
+                        <Icon src={bugIcon} />
+                      </Flex>
+                    </Control>
+                  </>
                 )
             }
             {isMainnet && (width > 640) && <Dot />}
