@@ -105,7 +105,8 @@ const en = {
     burnStasCoin: 'Irreversible burning of $STAS tokens',
     payCalc: 'First application on Solidity, a simple calculator',
     paintChat: 'Second application on Solidity, allows creating a collaborative drawing and discussing it in a chat',
-    cryptoTarot: 'Blockchain tarot cards, the most accurate results, includes three spreads'
+    cryptoTarot: 'Blockchain tarot cards, the most accurate results, includes three spreads',
+    web3Piano: 'Web3 piano for creating and recording music with the ability to publish on the blockchain'
 }
 
 export default en
