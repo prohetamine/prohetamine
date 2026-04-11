@@ -106,7 +106,8 @@ const en = {
     payCalc: 'First application on Solidity, a simple calculator',
     paintChat: 'Second application on Solidity, allows creating a collaborative drawing and discussing it in a chat',
     cryptoTarot: 'Blockchain tarot cards, the most accurate results, includes three spreads',
-    web3Piano: 'Piano for creating and recording music with the ability to publish on the blockchain'
+    web3Piano: 'Piano for creating and recording music with the ability to publish on the blockchain',
+    horn: 'Easy way to create a public Web3 poll and receive a commission in $STAS tokens as a partner for attracted votes.',
 }
 
 export default en

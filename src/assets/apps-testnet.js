@@ -17,6 +17,14 @@ const testnet = [
         image: image5,
         color: '--colors-controll-default-background',
         url: 'https://piano.prohetamine.ru'
+    },
+    {
+        title: 'Horn',
+        descriptionLang: 'horn',
+        readIn: '',
+        image: image5,
+        color: '--colors-controll-default-background',
+        url: 'https://horn.prohetamine.ru'
     }
 ]
 
