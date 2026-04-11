@@ -1,5 +1,6 @@
 import image3 from './apps/3.png?inline'
 import image5 from './apps/5.png?inline'
+import image6 from './apps/6.png?inline'
 
 const testnet = [
     {
@@ -22,7 +23,7 @@ const testnet = [
         title: 'Horn',
         descriptionLang: 'horn',
         readIn: '',
-        image: image5,
+        image: image6,
         color: '--colors-controll-default-background',
         url: 'https://horn.prohetamine.ru'
     }
