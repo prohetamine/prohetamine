@@ -8,7 +8,7 @@ import avatar from './../assets/stas.png?inline'
 
 import contactsIcon from './../assets/icons/contacts.svg?react'
 import dexIcon from './../assets/icons/dex.svg?react'
-import uniswapIcon from './../assets/icons/uniswap.svg?react'
+import swapIcon from './../assets/icons/swap.svg?react'
 import dappsIcon from './../assets/icons/dapps.svg?react'
 import airdropIcon from './../assets/icons/airdrop.svg?react'
 import otcIcon from './../assets/icons/otc.svg?react'
@@ -131,7 +131,7 @@ const Stas = () => {
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                 <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Uniswap</MicroFont500>
-                <Icon src={uniswapIcon} />
+                <Icon src={swapIcon} />
               </Flex>
             </Control>
             <Control 

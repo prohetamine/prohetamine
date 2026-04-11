@@ -1,8 +1,6 @@
-import styled from "styled-components"
-import articles from "../assets/articles"
+import styled from 'styled-components'
 import { BigFont700, Control, Flex, Icon, MicroFont500, NormalFont400 } from "./global"
 
-import linkIcon from './../assets/icons/link.svg?react'
 import { useContext, useState } from "react"
 import { LanguageContext } from "../contexts/language"
 import { useNavigate } from "react-router"
@@ -53,9 +51,8 @@ const Description = styled(NormalFont400)`
     }
 `
 
-const Article = ({ url, image, title, description, readIn, color }) => {
+const Item = ({ url, image, title, description, btn, btnIcon, color }) => {
     const [hover, setHover] = useState(false)
-        , lang = useContext(LanguageContext)
         , navigate = useNavigate()
 
     return (
@@ -95,8 +92,8 @@ const Article = ({ url, image, title, description, readIn, color }) => {
                                     textDecoration: hover ? 'underline' : 'none', 
                                     textDecorationSkipInk: 'none' 
                                 }}
-                            >{readIn ? lang.data.readIn : lang.data.read} {readIn}</MicroFont500>
-                            <Icon src={linkIcon} />
+                            >{btn}</MicroFont500>
+                            <Icon src={btnIcon} />
                         </Flex>                                
                     </Flex>
                 </Content>
@@ -105,17 +102,14 @@ const Article = ({ url, image, title, description, readIn, color }) => {
     )
 }
 
-const Articles = () => {
-    
-    return (
-        <Flex gap='var(--spaces-normal)' justify='flex-start' style={{ width: '100%' }}>
-            {
-                articles.map((article, key) => (
-                    <Article {...article} key={key} />
-                ))
-            }
-        </Flex>
-    )
-}
+const List = ({ items }) => (
+    <Flex gap='var(--spaces-normal)' justify='flex-start' style={{ width: '100%' }}>
+        {
+            items.map((article, key) => (
+                <Item {...article} key={key} />
+            ))
+        }
+    </Flex>
+)
 
-export default Articles
+export default List

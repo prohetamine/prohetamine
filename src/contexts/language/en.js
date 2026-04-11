@@ -8,9 +8,11 @@ const en = {
     lang: 'lang',
     mainUpdate: '5 april 2026',
     stasUpdate: '8 april 2026',
+    web3Update: '9 april 2026',
     articlesCount: 'articles',
     readIn: 'Read in ',
     read: 'Read',
+    launch: 'Launch',
     footer: 'made in 2026 with ❤ keyboard',
     back: 'Back',
     personalCoin: 'Personal coin',
@@ -81,7 +83,29 @@ const en = {
         'CA.', 
         'This is the single address for the coin across all networks:', 
         '0xD566886eB93500e2BA464bd48c8D5A2556569253'
-    ]
+    ],
+    
+    // web3
+
+    web3TestnetPage: [
+        'Testnet.', 
+        'New applications are tested in this section, after which they will move to the mainnet and be used through the',
+        '$STAS'
+    ],
+
+    web3MainnetPage: [
+        'Mainnet.', 
+        'This section contains applications related to the', 
+        '$STAS', 
+        'coin in the main network.'
+    ],
+
+    // apps description
+
+    burnStasCoin: 'Irreversible burning of $STAS tokens',
+    payCalc: 'First application on Solidity, a simple calculator',
+    paintChat: 'Second application on Solidity, allows creating a collaborative drawing and discussing it in a chat',
+    cryptoTarot: 'Blockchain tarot cards, the most accurate results, includes three spreads'
 }
 
 export default en

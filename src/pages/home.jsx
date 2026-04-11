@@ -11,11 +11,12 @@ import articlesIcon from './../assets/icons/articles.svg?react'
 import meIcon from './../assets/icons/me.svg?react'
 import web3Icon from './../assets/icons/web3.svg?react'
 import telegramIcon from './../assets/icons/telegram.svg?react'
+import linkIcon from './../assets/icons/link.svg?react'
 
-import Articles from '../components/articles.jsx'
 import Web3Emotions from '../components/web3-emotions.jsx'
 import Footer from '../components/footer.jsx'
 import articles from '../assets/articles.js'
+import List from '../components/list.jsx'
 
 const Home = () => {
   const { width } = useWindowSize()
@@ -129,7 +130,16 @@ const Home = () => {
         {
           isArticles 
             ? (
-              <Articles />
+              <List 
+                items={
+                  articles.map(app => ({
+                    ...app,
+                    description: app?.descriptionLang ? lang.data[app.descriptionLang] : app.description,
+                    btn: `${app.readIn ? lang.data.readIn : lang.data.read} ${app.readIn}`,
+                    btnIcon: linkIcon
+                  }))
+                } 
+              />
             )
             : (
               <Flex gap='var(--spaces-normal)' justify='flex-start' style={{ width: '100%' }}>
