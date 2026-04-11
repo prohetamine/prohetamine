@@ -63,12 +63,12 @@ const Web3 = () => {
             isMainnet
               ? (
                 <Text>
-                  <Bold>{lang.data.web3MainnetPage[0]}</Bold> {lang.data.web3MainnetPage[1]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = '/stas'}>{lang.data.web3MainnetPage[2]}</Link> {lang.data.web3MainnetPage[3]}
+                  <Bold>{lang.data.web3MainnetPage[0]}</Bold> {lang.data.web3MainnetPage[1]} <Link whileTap={{ scale: 0.9 }} onTap={() => navigate('/stas')}>{lang.data.web3MainnetPage[2]}</Link> {lang.data.web3MainnetPage[3]}
                 </Text>
               )
               : (
                 <Text>
-                  <Bold>{lang.data.web3TestnetPage[0]}</Bold> {lang.data.web3TestnetPage[1]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = '/stas'}>{lang.data.web3TestnetPage[2]}</Link> 
+                  <Bold>{lang.data.web3TestnetPage[0]}</Bold> {lang.data.web3TestnetPage[1]} <Link whileTap={{ scale: 0.9 }} onTap={() => navigate('/stas')}>{lang.data.web3TestnetPage[2]}</Link> 
                 </Text>
               )
           } 
