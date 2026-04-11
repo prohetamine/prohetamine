@@ -1,20 +1,11 @@
-import coinWebm from './../assets/coin.webm?inline'
+import styled from 'styled-components'
+import coin from './../assets/output.gif?inline'
+
+const Image404 = styled.img``
 
 const Coin = ({ width }) => {
     return (
-        <video 
-            autoplay='true'
-            loop='true'
-            muted='true'
-            playsinline='true'
-            style={{
-                background: 'transparent',
-                display: 'block',
-                width
-            }}
-            >
-            <source src={coinWebm} type="video/webm" />
-        </video>
+        <Image404 src={coin} style={{ width }} />
     )
 }
 
