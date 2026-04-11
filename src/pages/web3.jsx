@@ -3,13 +3,13 @@ import { useLocation, useNavigate } from 'react-router'
 import { useContext, useRef } from 'react'
 import { LanguageContext } from '../contexts/language/index.jsx'
 
-import { Avatar, BigFont700, Bold, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, Link, MicroFont500, NanoFont500, SmallFont500, Text } from '../components/global.jsx'
+import { Bold, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, Link, MicroFont500, NanoFont500, Text } from '../components/global.jsx'
 
-import contactsIcon from './../assets/icons/contacts.svg?react'
+import dexIcon from './../assets/icons/dex.svg?react'
 import swapIcon from './../assets/icons/swap.svg?react'
-import meIcon from './../assets/icons/me.svg?react'
 import dappsIcon from './../assets/icons/dapps.svg?react'
-import telegramIcon from './../assets/icons/telegram.svg?react'
+import requestCoinsIcon from './../assets/icons/request-coins.svg?react'
+import airdropIcon from './../assets/icons/airdrop.svg?react'
 
 import Web3Emotions from '../components/web3-emotions.jsx'
 import Footer from '../components/footer.jsx'
@@ -82,29 +82,63 @@ const Web3 = () => {
                 <Icon src={swapIcon} />
               </Flex>
             </Control>
-            {/*
-              <Control 
-                onTap={() => window.location = 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=prohetamine@gmail.com'}
-                whileTap={{ y: 2, scale: 0.97 }} 
-                style={{ background: 'var(--colors-controll-default-background-alt-google)' }}
-              >
-                <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                  <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Email</MicroFont500>
-                  <Icon src={contactsIcon} />
-                </Flex>
-              </Control>
-              {(width > 640) && <Dot />}
-              <Control 
-                onTap={() => window.location = 'tg://resolve?domain=prohetamines'}
-                whileTap={{ y: 2, scale: 0.97 }} 
-                style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
-              >
-                <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                  <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Telegram channel</MicroFont500>
-                  <Icon src={telegramIcon} />
-                </Flex>
-              </Control>
-            */}
+            {(width > 640) && <Dot />}
+            {
+              isMainnet 
+                ? (
+                  <>
+                    <Control 
+                      onTap={() => window.location = 'https://dexscreener.com/bsc/0xD566886eB93500e2BA464bd48c8D5A2556569253'}
+                      whileTap={{ y: 2, scale: 0.97 }} 
+                      style={{ background: 'var(--colors-controll-default-background-alt-dex)' }}
+                    >
+                      <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>DEX</MicroFont500>
+                        <Icon src={dexIcon} />
+                      </Flex>
+                    </Control>
+                    <Control 
+                      onTap={() => window.location = 'https://app.uniswap.org/explore/tokens/bnb/0xd566886eb93500e2ba464bd48c8d5a2556569253?inputCurrency=NATIVE'}
+                      whileTap={{ y: 2, scale: 0.97 }} 
+                      style={{ background: 'var(--colors-controll-default-background-alt-uniswap)' }}
+                    >
+                      <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Uniswap</MicroFont500>
+                        <Icon src={swapIcon} />
+                      </Flex>
+                    </Control>
+                  </>
+                )
+                : (
+                  <Control 
+                    onTap={() => window.location = 'tg://resolve?domain=prohetamines'}
+                    whileTap={{ y: 2, scale: 0.97 }} 
+                    style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                  >
+                    <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                      <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Get tBNB & tSTAS</MicroFont500>
+                      <Icon src={requestCoinsIcon} />
+                    </Flex>
+                  </Control>
+                )
+            }
+            {isMainnet && (width > 640) && <Dot />}
+            {
+              isMainnet 
+                ? (
+                  <Control 
+                    onTap={() => window.location = 'tg://resolve?domain=prohetaminebot'}
+                    whileTap={{ y: 2, scale: 0.97 }} 
+                    style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                  >
+                    <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                      <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Airdrop</MicroFont500>
+                      <Icon src={airdropIcon} />
+                    </Flex>
+                  </Control>
+                )
+                : null
+            }
           </Flex>
           <List 
             items={
