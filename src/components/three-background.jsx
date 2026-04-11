@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { motion } from 'framer-motion'
 
 import hdri from './../assets/hdri.png?inline'
+import { useNavigate } from 'react-router'
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   width: 100%;
   height: 100px;
   overflow: hidden;
@@ -21,9 +23,9 @@ const Wrapper = styled.div`
 
 const ThreeBackground = () => {
   const wrapperRef = useRef()
-
-  const [model, setModel] = useState(null)
-
+      , navigate = useNavigate()
+      , [model, setModel] = useState(null)
+  
   useEffect(() => {
     const timeId = setTimeout(async () => {
       const loader = new GLTFLoader();
@@ -155,7 +157,7 @@ const ThreeBackground = () => {
   }, [model, wrapperRef])
 
   return (
-    <Wrapper ref={wrapperRef} />
+    <Wrapper onTap={() => navigate('/')} ref={wrapperRef} />
   )
 }
 
