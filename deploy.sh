@@ -2,6 +2,7 @@
 set -e
 npm run build
 cp dist/index.html dist/404.html
+cp dist/index.html dist/stas.html
 cd dist
 git init
 git add -A
