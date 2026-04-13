@@ -113,6 +113,9 @@ const Stas = () => {
           <Text>
             <Bold>{lang.data.stasPage[25]}</Bold> {lang.data.stasPage[26]} <Bold style={{ overflowWrap: 'break-word', width: '100%' }}>{lang.data.stasPage[27]}</Bold>
           </Text>
+          <Text>
+            Official contacts <Link whileTap={{ scale: 0.9 }} onTap={() => `mailto:stas@prohetamine.ru`}>stas@prohetamine.ru</Link>
+          </Text>
           <Flex ref={contactsRef} gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
             <Control 
               onTap={() => window.location = 'https://dexscreener.com/bsc/0xD566886eB93500e2BA464bd48c8D5A2556569253'}
