@@ -88,7 +88,7 @@ const Stas = () => {
             {lang.data.stasPage[6]} <Link whileTap={{ scale: 0.9 }} onTap={() => navigate('/web3')}>{lang.data.stasPage[7]}</Link> {lang.data.stasPage[8]} <Bold>{lang.data.stasPage[9]}</Bold> {lang.data.stasPage[10]}
           </Text>
           <Text>
-            <Bold>{lang.data.stasPage[11]}</Bold> {lang.data.stasPage[12]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = 'https://github.com/prohetamine/stas-pay'}>{lang.data.stasPage[13]}</Link> {lang.data.stasPage[14]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = 'https://github.com/prohetamine/redstone'}>{lang.data.stasPage[15]}</Link>{lang.data.stasPage[16]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = 'later...'}>{lang.data.stasPage[17]}</Link> {lang.data.stasPage[18]}
+            <Bold>{lang.data.stasPage[11]}</Bold> {lang.data.stasPage[12]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = 'https://github.com/prohetamine/stas-pay'}>{lang.data.stasPage[13]}</Link> {lang.data.stasPage[14]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = 'https://github.com/prohetamine/redstone'}>{lang.data.stasPage[15]}</Link>{lang.data.stasPage[16]} <Link whileTap={{ scale: 0.9 }} onTap={() => window.location = 'https://horn.prohetamine.ru'}>{lang.data.stasPage[17]}</Link> {lang.data.stasPage[18]}
           </Text>
           <Text>
             <Bold>{lang.data.stasPage[19]}</Bold> {lang.data.stasPage[20]}
