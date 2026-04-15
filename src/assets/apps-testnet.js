@@ -1,6 +1,7 @@
 import image3 from './apps/3.png?inline'
 import image5 from './apps/5.png?inline'
 import image6 from './apps/6.png?inline'
+import image7 from './apps/7.png?inline'
 
 const testnet = [
     {
@@ -31,7 +32,7 @@ const testnet = [
         title: 'De2FA',
         descriptionLang: 'de2fa',
         readIn: '',
-        image: image6,
+        image: image7,
         color: '--colors-controll-default-background',
         url: 'https://de2fa.prohetamine.ru'
     }
