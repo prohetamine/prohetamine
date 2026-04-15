@@ -108,6 +108,7 @@ const en = {
     cryptoTarot: 'Blockchain tarot cards, the most accurate results, includes three spreads',
     web3Piano: 'Piano for creating and recording music with the ability to publish on the blockchain',
     horn: 'Easy way to create a public Web3 poll and receive a commission in $STAS tokens as a partner for attracted votes.',
+    de2fa: 'Decentralized storage of 2FA keys protected by client-side encryption based on PBKDF2 and Argon2id with AES-GCM, where all data is encrypted and decrypted exclusively on the user’s device without any server-side key storage.'
 }
 
 export default en

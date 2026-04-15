@@ -26,6 +26,14 @@ const testnet = [
         image: image6,
         color: '--colors-controll-default-background',
         url: 'https://horn.prohetamine.ru'
+    },
+    {
+        title: 'De2FA',
+        descriptionLang: 'de2fa',
+        readIn: '',
+        image: image6,
+        color: '--colors-controll-default-background',
+        url: 'https://de2fa.prohetamine.ru'
     }
 ]
 
