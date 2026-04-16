@@ -10,7 +10,7 @@ import networkIcon from './../../assets/icons/network.svg?react'
 import dexIcon from './../../assets/icons/dex.svg?react'
 import telegramIcon from './../../assets/icons/telegram.svg?react'
 import contactsIcon from './../../assets/icons/contacts.svg?react'
-import addToken from '../../lib/add-token'
+import addNetworkAndToken from '../../lib/add-network-and-token'
 
 export const BuyCoin = ({ onData }) => {
 
@@ -93,61 +93,29 @@ export const DEX = ({ onData }) => {
     )
 }
 
+export const Notify = ({ onData, value }) => {
+
+    return (
+        <Flex gap='var(--spaces-normal)'>
+            <Bold>Уведомление</Bold>
+            <Text>{value[0]}</Text>
+            <Flex gap='var(--spaces-normal)' direction='row' justify='flex-end' style={{ width: '100%', flexWrap: 'wrap' }}>
+                <Control 
+                    onTap={() => onData(false)}
+                    whileTap={{ y: 2, scale: 0.97 }} 
+                    style={{ background: 'var(--colors-controll-default-background)' }}
+                >
+                    <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                    </Flex>
+                </Control>
+            </Flex>
+        </Flex>
+    )
+}
+
+
 export const AddNetworks = ({ onData }) => {
-
-    
-
-    const addNetwork = async () => {
-
-        /*if (!window.ethereum) {
-            alert("Кошелек не найден");
-            return;
-        }
-
-        const chainId = "0x61"; 
-
-        try {
-            const currentChainId = await window.ethereum.request({
-                method: "eth_chainId"
-            });
-
-            if (currentChainId === chainId) {
-                alert("Сеть уже выбрана");
-                return;
-            }
-
-            await window.ethereum.request({
-                method: "wallet_switchEthereumChain",
-                params: [{ chainId }]
-            });
-        } catch (switchError) {
-            if (switchError.code === 4902) {
-                try {
-                    await window.ethereum.request({
-                    method: "wallet_addEthereumChain",
-                    params: [{
-                        chainId: chainId,
-                        chainName: "BNB Smart Chain Testnet",
-                        nativeCurrency: {
-                        name: "BNB",
-                        symbol: "BNB",
-                        decimals: 18
-                        },
-                        rpcUrls: ["https://data-seed-prebsc-1-s1.bnbchain.org:8545"],
-                        blockExplorerUrls: ["https://testnet.bscscan.com"]
-                    }]
-                    });
-
-                    console.log("Сеть добавлена");
-
-                } catch (addError) {
-                    console.error("Ошибка добавления:", addError);
-                }
-            } else {
-                console.error("Ошибка переключения:", switchError);
-            }
-        }*/
-    }
 
     return (
         <Flex gap='var(--spaces-normal)'>
@@ -155,7 +123,19 @@ export const AddNetworks = ({ onData }) => {
             <Text>Выберите сеть которая будет импортирована в ваш кошелек.</Text>
             <Control 
                 onTap={async () => {
-                    await addToken({ chainId: 97 })
+                    const isAdded = await addNetworkAndToken({
+                        chainId: 97,
+                        chainName: 'BNB Chain Testnet',
+                        rpcUrls: ['https://bsc-testnet-rpc.publicnode.com'],
+                        blockExplorerUrls: ['https://testnet.bscscan.com'],
+                        nativeCurrency: {
+                            name: 'tBNB',
+                            symbol: 'tBNB',
+                            decimals: 18,
+                        }
+                    })
+                    
+                    onData(true, isAdded)
                 }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-dark)', width: '100%' }}
@@ -167,7 +147,19 @@ export const AddNetworks = ({ onData }) => {
             </Control>
             <Control 
                 onTap={async () => {
-                    await addToken({ chainId: 56 })
+                    const isAdded = await addNetworkAndToken({
+                        chainId: 56,
+                        chainName: 'BNB Chain',
+                        rpcUrls: ['https://bsc-rpc.publicnode.com'],
+                        blockExplorerUrls: ['https://bscscan.com'],
+                        nativeCurrency: {
+                            name: 'BNB',
+                            symbol: 'BNB',
+                            decimals: 18,
+                        }
+                    })
+
+                    onData(true, isAdded)
                 }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-yellow)', width: '100%' }}
@@ -179,7 +171,19 @@ export const AddNetworks = ({ onData }) => {
             </Control>
             <Control 
                 onTap={async () => {
-                    await addToken({ chainId: 137 })
+                    const isAdded = await addNetworkAndToken({
+                        chainId: 137,
+                        chainName: 'Polygon',
+                        rpcUrls: ['https://polygon-bor-rpc.publicnode.com'],
+                        blockExplorerUrls: ['https://polygonscan.com'],
+                        nativeCurrency: {
+                            name: 'POL',
+                            symbol: 'POL',
+                            decimals: 18,
+                        }
+                    })
+
+                    onData(true, isAdded)
                 }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-purple)', width: '100%' }}
@@ -191,7 +195,7 @@ export const AddNetworks = ({ onData }) => {
             </Control>
             <Flex gap='var(--spaces-normal)' direction='row' justify='flex-end' style={{ width: '100%', flexWrap: 'wrap' }}>
                 <Control 
-                    onTap={() => onData(false)}
+                    onTap={() => onData(false, false)}
                     whileTap={{ y: 2, scale: 0.97 }} 
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >

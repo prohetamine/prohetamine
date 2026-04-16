@@ -118,9 +118,11 @@ const Web3 = () => {
                   <>
                     <Control 
                       onTap={async () => {
-                        const [isOk] = await showModalWindow('AddNetworks')
+                        const [isOk, isAdded] = await showModalWindow('AddNetworks')
                       
-                        console.log(isOk)
+                        if (isOk) {
+                          await showModalWindow('Notify', { value: [isAdded ? 'Сеть и монета добавлены в кошелек.' : 'Сеть и монета не добавлены в кошелек.'] })
+                        }
                       }}
                       whileTap={{ y: 2, scale: 0.97 }} 
                       style={{ background: 'var(--colors-controll-default-background-alt-dark)' }}

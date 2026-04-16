@@ -2,7 +2,7 @@
 import { createContext, useState } from 'react'
 import styled from 'styled-components'
 import { Flex } from '../../components/global'
-import { AddNetworks, Airdrop, BugReport, BuyCoin, DEX, Email, TestnetDrop } from './windows'
+import { AddNetworks, Airdrop, BugReport, BuyCoin, DEX, Email, Notify, TestnetDrop } from './windows'
 
 export const ModalWindowContext = createContext(null)
 
@@ -34,7 +34,8 @@ const WINDOWS = {
   'BugReport': BugReport,
   'TestnetDrop': TestnetDrop,
   'DEX': DEX,
-  'Email': Email
+  'Email': Email,
+  'Notify': Notify
 }
 
 export const ModalWindowProvider = ({ children }) => {
