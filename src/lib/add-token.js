@@ -8,7 +8,7 @@ const addToken = async () => {
                     address: '0xd566886eb93500e2ba464bd48c8d5a2556569253',
                     symbol: 'STAS',
                     decimals: 1,
-                    image: 'https://prohetamine.ru/token.svg',
+                    image: 'https://prohetamine.ru/token256x256.png',
                 }
             }
         })
