@@ -189,7 +189,7 @@ const Web3 = () => {
               ).map(app => ({
                 ...app,
                 description: app?.descriptionLang ? lang.data[app.descriptionLang] : app.description,
-                btn: lang.data.launch,
+                btn: lang.data.launchBtn,
                 btnIcon: dappsIcon
               }))
             } 

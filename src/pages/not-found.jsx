@@ -58,7 +58,7 @@ const NotFound = () => {
             align='center'
           >
             <Icon src={arrowLeftIcon} />
-            <MicroFont500 style={{ color: 'var(--colors-controll-default-color)', userSelect: 'none' }}>{lang.data.back} {timer ? `(${timer})` : ''}</MicroFont500>
+            <MicroFont500 style={{ color: 'var(--colors-controll-default-color)', userSelect: 'none' }}>{lang.data.backBtn} {timer ? `(${timer})` : ''}</MicroFont500>
           </Flex>
         </Control>
       </Flex>

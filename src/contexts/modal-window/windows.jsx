@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 import styled from 'styled-components'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { motion, time } from 'framer-motion'
 import { Bold, Control, Flex, Icon, MicroFont500, Text } from '../../components/global'
 import copy from 'copy-to-clipboard'
+
+import { LanguageContext } from './../language'
 
 import networkIcon from './../../assets/icons/network.svg?react'
 import dexIcon from './../../assets/icons/dex.svg?react'
@@ -13,18 +15,19 @@ import contactsIcon from './../../assets/icons/contacts.svg?react'
 import addNetworkAndToken from '../../lib/add-network-and-token'
 
 export const BuyCoin = ({ onData }) => {
+    const lang = useContext(LanguageContext)
 
     return (
         <Flex gap='var(--spaces-normal)'>
             <Bold>Uniswap</Bold>
-            <Text>Выберите сеть в которой хотите купить монеты.</Text>
+            <Text>{lang.data.selectNetworkForBuyCoins}</Text>
             <Control 
                 onTap={() => window.location = 'https://app.uniswap.org/explore/tokens/bnb/0xd566886eb93500e2ba464bd48c8d5a2556569253?inputCurrency=NATIVE'}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-yellow)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS в BSC</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS {lang.data.in} BSC</MicroFont500>
                     <Icon src={networkIcon} />
                 </Flex>
             </Control>
@@ -34,7 +37,7 @@ export const BuyCoin = ({ onData }) => {
                 style={{ background: 'var(--colors-controll-default-background-alt-purple)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS в Polygon</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS {lang.data.in} Polygon</MicroFont500>
                     <Icon src={networkIcon} />
                 </Flex>
             </Control>
@@ -45,7 +48,7 @@ export const BuyCoin = ({ onData }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
@@ -54,6 +57,7 @@ export const BuyCoin = ({ onData }) => {
 }
 
 export const DEX = ({ onData }) => {
+    const lang = useContext(LanguageContext)
 
     return (
         <Flex gap='var(--spaces-normal)'>
@@ -64,7 +68,7 @@ export const DEX = ({ onData }) => {
                 style={{ background: 'var(--colors-controll-default-background-alt-yellow)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS в BSC</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS {lang.data.in} BSC</MicroFont500>
                     <Icon src={dexIcon} />
                 </Flex>
             </Control>
@@ -74,7 +78,7 @@ export const DEX = ({ onData }) => {
                 style={{ background: 'var(--colors-controll-default-background-alt-purple)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS в Polygon</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>$STAS {lang.data.in} Polygon</MicroFont500>
                     <Icon src={dexIcon} />
                 </Flex>
             </Control>
@@ -85,7 +89,7 @@ export const DEX = ({ onData }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
@@ -94,10 +98,11 @@ export const DEX = ({ onData }) => {
 }
 
 export const Notify = ({ onData, value }) => {
+    const lang = useContext(LanguageContext)
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Уведомление</Bold>
+            <Bold>{lang.data.notify}</Bold>
             <Text>{value[0]}</Text>
             <Flex gap='var(--spaces-normal)' direction='row' justify='flex-end' style={{ width: '100%', flexWrap: 'wrap' }}>
                 <Control 
@@ -106,7 +111,7 @@ export const Notify = ({ onData, value }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
@@ -116,11 +121,12 @@ export const Notify = ({ onData, value }) => {
 
 
 export const AddNetworks = ({ onData }) => {
+    const lang = useContext(LanguageContext)
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Добавить сеть</Bold>
-            <Text>Выберите сеть которая будет импортирована в ваш кошелек.</Text>
+            <Bold>{lang.data.addNetwork}</Bold>
+            <Text>{lang.data.selectNetworkForImportToWallet}</Text>
             <Control 
                 onTap={async () => {
                     const isAdded = await addNetworkAndToken({
@@ -200,7 +206,7 @@ export const AddNetworks = ({ onData }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
@@ -209,12 +215,13 @@ export const AddNetworks = ({ onData }) => {
 }
 
 export const TestnetDrop = ({ onData }) => {
+    const lang = useContext(LanguageContext)
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Инструкция</Bold>
+            <Bold>{lang.data.manual}</Bold>
             <Text>
-                Чтобы получить монеты в тестнете <Bold>BSC</Bold>, нужно отправить в комментарии к посту в телеграм, адрес своего <Bold>BSC</Bold> кошелька.
+                {lang.data.testnetDropCoins[0]} <Bold>BSC</Bold>{lang.data.testnetDropCoins[1]} <Bold>BSC</Bold> {lang.data.testnetDropCoins[2]}
             </Text>
             <Control 
                 onTap={() => window.location = 'https://t.me/prohetamines/372'}
@@ -222,7 +229,7 @@ export const TestnetDrop = ({ onData }) => {
                 style={{ background: 'var(--colors-controll-default-background-alt-blue)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Открыть в telegram</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.openInTelegram}</MicroFont500>
                     <Icon src={telegramIcon} />
                 </Flex>
             </Control>
@@ -233,7 +240,7 @@ export const TestnetDrop = ({ onData }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
@@ -242,12 +249,13 @@ export const TestnetDrop = ({ onData }) => {
 }
 
 export const Airdrop = ({ onData }) => {
+    const lang = useContext(LanguageContext)
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Инструкция</Bold>
+            <Bold>{lang.data.manual}</Bold>
             <Text>
-                Чтобы получать ежедневный airdrop <Bold>10 $STAS</Bold> нужно быть подписанным на телеграм канал.
+                {lang.data.airdropSubscribe[0]} <Bold>10 $STAS</Bold> {lang.data.airdropSubscribe[1]}
             </Text>
             <Control 
                 onTap={() => window.location = 'https://t.me/prohetamines/370'}
@@ -255,7 +263,7 @@ export const Airdrop = ({ onData }) => {
                 style={{ background: 'var(--colors-controll-default-background-alt-blue)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Открыть в telegram</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.openInTelegram}</MicroFont500>
                     <Icon src={telegramIcon} />
                 </Flex>
             </Control>
@@ -266,7 +274,7 @@ export const Airdrop = ({ onData }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
@@ -275,6 +283,8 @@ export const Airdrop = ({ onData }) => {
 }
 
 export const Email = ({ onData, value }) => {
+    const lang = useContext(LanguageContext)
+
     useEffect(() => {
         const timeId = setTimeout(() => {
             copy(value[0])
@@ -285,9 +295,9 @@ export const Email = ({ onData, value }) => {
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Почта</Bold>
+            <Bold>{lang.data.email}</Bold>
             <Text>
-                Адрес <Bold>{value[0]}</Bold> скопирован в буфер обмена.
+                {lang.data.emailAddressCopy[0]} <Bold>{value[0]}</Bold> {lang.data.emailAddressCopy[1]}
             </Text>
             <Control 
                 onTap={() => window.location = `https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=${value[0]}${value[1] ? `&su=${value[1]}` : ''}`}
@@ -295,7 +305,7 @@ export const Email = ({ onData, value }) => {
                 style={{ background: 'var(--colors-controll-default-background-alt-green)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Открыть в gmail</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.openInGmail}</MicroFont500>
                     <Icon src={contactsIcon} />
                 </Flex>
             </Control>
@@ -305,7 +315,7 @@ export const Email = ({ onData, value }) => {
                 style={{ background: 'var(--colors-controll-default-background)', width: '100%' }}
             >
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Открыть в почте</MicroFont500>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.openInMail}</MicroFont500>
                     <Icon src={contactsIcon} />
                 </Flex>
             </Control>
@@ -316,7 +326,7 @@ export const Email = ({ onData, value }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
@@ -325,11 +335,12 @@ export const Email = ({ onData, value }) => {
 }
 
 export const BugReport = ({ onData }) => {
+    const lang = useContext(LanguageContext)
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Сообщить о баге</Bold>
-            <Text>Вы можете связаться со мной через один из способов связи.</Text>
+            <Bold>{lang.data.reportBug}</Bold>
+            <Text>{lang.data.contactReportBug}</Text>
             <Control 
                 onTap={() => window.location = 'tg://resolve?domain=prohetamine'}
                 whileTap={{ y: 2, scale: 0.97 }} 
@@ -357,129 +368,10 @@ export const BugReport = ({ onData }) => {
                     style={{ background: 'var(--colors-controll-default-background)' }}
                 >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Закрыть</MicroFont500>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
                     </Flex>
                 </Control>
             </Flex>
         </Flex>
     )
 }
-
-
-
-
-/*
-const Controll = styled(motion.div)`
-    border: 1px solid var(--interface-dark-background-border);
-    background: var(--interface-background-primary);
-    border-radius: 8px;
-    padding: 16px 12px;
-    width: 100%;
-    box-sizing: border-box;
-`
-
-const Input = styled.input`
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 16px;
-    padding: 0px;
-    color: var(--text-gray);
-    border: none;
-    outline: none;
-    background: none;
-    width: 100%;
-    box-sizing: border-box;
-    
-    &::placeholder {
-        color: var(--text-placeholder);
-    }
-`
-
-const Textarea = styled.textarea`
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--text-gray);
-    border: none;
-    outline: none;
-    background: none;
-    width: 100%;
-    box-sizing: border-box;
-    resize: none;
-    height: 130px;
-    
-    &::placeholder {
-        color: var(--text-placeholder);
-    }
-`
-
-const Button = styled(motion.div)`
-    border: 1px solid var(--interface-background-border);
-    border-radius: 8px;
-    padding: 12px 16px;
-    background: var(--interface-color-second);
-    cursor: pointer;
-    user-select: none;
-`
-
-const CheckboxControll = styled.div`
-    background: var(--interface-background-primary);
-    border: 1px solid var(--interface-dark-background-border);
-    border-radius: 8px;
-    font-size: 0px;
-    width: 36px;
-    height: 36px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-`
-
-const Wrapper = styled.div`
-    height: 48px;
-    width: 100%;
-    position: relative;
-    z-index: 99;
-    user-select: none;
-`
-
-export const EditProfile = ({ value, onData }) => {
-    const [name, setName] = useState(value[0])
-
-    return (
-        <Flex gap='12px'>
-            <Flex gap='6px' style={{ alignItems: 'flex-start', width: '100%' }}>
-                <NormalFont600 style={{ color: 'var(--text-gray)' }}>Rename Profile</NormalFont600>
-                <NormalFont500 style={{ color: 'var(--text-light)' }}>Update the profile name. This won’t affect linked accounts or data.</NormalFont500>
-            </Flex>
-            <Flex gap='6px' style={{ alignItems: 'flex-start', width: '100%' }}>
-                <NanoFont700 style={{ color: 'var(--text-light)' }}>Title</NanoFont700>
-                <Controll>
-                    <Input 
-                        value={name} 
-                        onChange={({ target: { value } }) => {
-                            setName(value)
-                        }}
-                        placeholder='Stas, Prohetamine, etc...' 
-                    />
-                </Controll>
-            </Flex>
-            <Flex gap='12px' direction='row' justify='flex-end' style={{ width: '100%' }}>
-                <Button
-                    onTap={() => onData(true, name)}
-                    whileTap={{ scale: 0.9 }}
-                >
-                    <NormalFont600 style={{ color: 'var(--interface-color-primary)' }}>Save</NormalFont600>
-                </Button>
-                <Button
-                    onTap={() => onData(false, name)}
-                    whileTap={{ scale: 0.9 }}
-                >
-                    <NormalFont600 style={{ color: 'var(--interface-color-primary)' }}>Cancel</NormalFont600>
-                </Button>
-            </Flex>
-        </Flex>
-    )
-}
-*/
