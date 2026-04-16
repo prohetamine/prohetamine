@@ -32,6 +32,8 @@ const ru = {
     openInMail: 'Открыть в почте',
     reportBug: 'Сообщить о баге',
     contactReportBug: 'Вы можете связаться со мной через один из способов связи.',
+    networkAndTokenAddedOk: 'Сеть и монета добавлены в кошелек.',
+    networkAndTokenAddedError: 'Сеть и монета не добавлены в кошелек.',
     
     // content
 

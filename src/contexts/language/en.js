@@ -32,6 +32,8 @@ const en = {
     openInMail: 'Open in Mail',
     reportBug: 'Report a bug',
     contactReportBug: 'You can contact me via one of the available contact methods.',
+    networkAndTokenAddedOk: 'Network and token have been added to the wallet.',
+    networkAndTokenAddedError: 'Network and token were not added to the wallet.',
 
     // content
 

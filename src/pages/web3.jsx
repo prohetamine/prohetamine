@@ -121,7 +121,12 @@ const Web3 = () => {
                         const [isOk, isAdded] = await showModalWindow('AddNetworks')
                       
                         if (isOk) {
-                          await showModalWindow('Notify', { value: [isAdded ? 'Сеть и монета добавлены в кошелек.' : 'Сеть и монета не добавлены в кошелек.'] })
+                          await showModalWindow('Notify', { value: [
+                            isAdded 
+                              ? lang.data.networkAndTokenAddedOk 
+                              : lang.data.networkAndTokenAddedError 
+                            ] 
+                          })
                         }
                       }}
                       whileTap={{ y: 2, scale: 0.97 }} 
