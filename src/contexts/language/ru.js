@@ -34,6 +34,8 @@ const ru = {
     contactReportBug: 'Вы можете связаться со мной через один из способов связи.',
     networkAndTokenAddedOk: 'Сеть и монета добавлены в кошелек.',
     networkAndTokenAddedError: 'Сеть и монета не добавлены в кошелек.',
+    sendDonateOk: 'Спасибо за донат!',
+    sendDonateError: 'Какая-то ошибка, донат не отправлен',
     
     // content
 

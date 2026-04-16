@@ -2,6 +2,9 @@ import { Control, Flex, Icon, MicroFont500 } from "./global"
 import * as Redstone from '@prohetamine/redstone'
 import { useStasPay } from 'stas-pay'
 import coinsIcon from './../assets/icons/coins.svg?react'
+import { useContext } from "react"
+import { LanguageContext } from "../contexts/language"
+import { ModalWindowContext } from "../contexts/modal-window"
 
 const paymentAddress = '0xbcfA1b80C39F9a378b12b257934BE409Bc93eC60'
 
@@ -13,6 +16,9 @@ const Web3Donate = () => {
             stas: true,
             paymentAddress
         })
+
+    const showModalWindow = useContext(ModalWindowContext)
+        , lang = useContext(LanguageContext)
 
     const handleDonate = async () => {
         if (isConnected) {
@@ -31,7 +37,14 @@ const Web3Donate = () => {
                 , isConfirm = await confirm(commisson)
 
             if (isConfirm) {
-                await donate.updateValue()
+                const isDonated = await donate.updateValue()
+            
+                await showModalWindow('Notify', { value: [
+                    isDonated 
+                        ? lang.data.sendDonateOk 
+                        : lang.data.sendDonateError 
+                    ] 
+                })
             }
         } else {
             open()

@@ -34,7 +34,9 @@ const en = {
     contactReportBug: 'You can contact me via one of the available contact methods.',
     networkAndTokenAddedOk: 'Network and token have been added to the wallet.',
     networkAndTokenAddedError: 'Network and token were not added to the wallet.',
-
+    sendDonateOk: 'Thank you for your donation!',
+    sendDonateError: 'An error occurred, the donation was not sent',
+        
     // content
 
     mainPage: [
