@@ -3281,10 +3281,10 @@ split2@^4.0.0:
   resolved "https://registry.yarnpkg.com/split2/-/split2-4.2.0.tgz#c9c5920904d148bab0b9f67145f245a86aadbfa4"
   integrity sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==
 
-stas-pay@^0.1.226:
-  version "0.1.226"
-  resolved "https://registry.yarnpkg.com/stas-pay/-/stas-pay-0.1.226.tgz#f04ff7105ab983a39fddf7f091248ff051af485f"
-  integrity sha512-VO5OR3dXuCq0O2sGHtrUTaatk490+60QSpcmAjgO50Im3Yequ3oQWQQCoP8ro5EgpcwjaN6964aas5H/afwXMA==
+stas-pay@^0.1.228:
+  version "0.1.228"
+  resolved "https://registry.yarnpkg.com/stas-pay/-/stas-pay-0.1.228.tgz#1bc4ad7da02785dfc95ec79b85466fcd170af594"
+  integrity sha512-f8uV7nTjy7OO9W3rtVEbKZRWa45VjBi3MI7iPAH2dMqszJivYiR/udJZ1TcMsTd+GD5s7Bw6vluuUfgQp4U69w==
   dependencies:
     "@reown/appkit" "^1.8.17"
     "@vitejs/plugin-react" "^5.1.3"

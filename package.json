@@ -18,7 +18,7 @@
     "react-router": "^7.14.0",
     "redstone": "^0.0.8",
     "sleep-promise": "^9.1.0",
-    "stas-pay": "^0.1.226",
+    "stas-pay": "^0.1.228",
     "styled-components": "^6.3.12",
     "three": "^0.183.2",
     "use-local-storage": "^3.0.0",
