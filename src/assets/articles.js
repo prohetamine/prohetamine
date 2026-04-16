@@ -19,7 +19,7 @@ const articles = [
         description: 'Привет! Давай сделаем камеру для управления жестами, почти как у Lovense, она будет также управляться с помощью жестов.',
         readIn: 'Telegraf',
         image: image1,
-        color: '--colors-controll-default-background-alt-telegraf',
+        color: '--colors-controll-default-background-alt-dark',
         url: 'https://telegra.ph/AI-Camera-ot-Prohetamine-03-04'
     },
     {
@@ -27,7 +27,7 @@ const articles = [
         description: 'Некоторое время назад у меня было совершенно много времени из-за отсутствия дел, как ни странно, я совершенно не знал, чем себя занять и все из-за того что, не мог программировать — заниматься любимым делом.',
         readIn: 'Pikabu',
         image: image2,
-        color: '--colors-controll-default-background-alt-pikabu',
+        color: '--colors-controll-default-background-alt-yellow',
         url: 'https://pikabu.ru/story/skaz_o_tom_kak_programmist_skulpturu_sozdaval_8653314'
     },
     {
@@ -35,7 +35,7 @@ const articles = [
         description: 'Сегодня мы сделаем одно из самых бесполезных устройств из тех, что можно собрать, но как показывает жизнь, лучше сделать что-то, чем не сделать ничего. Тем не менее, в защиту этой бесполезности можно сказать только что-то вроде: много ли интересных дел, которыми мы занимаемся являются хоть сколько бы полезными?',
         readIn: 'Хабр',
         image: image3,
-        color: '--colors-controll-default-background-alt-habr',
+        color: '--colors-controll-default-background-alt-sky',
         url: 'https://habr.com/ru/post/593421/'
     },
     {
@@ -43,7 +43,7 @@ const articles = [
         description: 'Это вторая часть, продолжающая серию статей про связанных с разработкой расширения для фрилансеров. С первой статьей, где мы занимаемся разработкой расширения, вы можете ознакомиться здесь. Также найти весь исходный код на GitHub и само расширение в Chrome Web Store. В этой статье я расскажу, как опубликовать расширение в Chrome Web Store. С наступающим Фрилансер. Будь сильней, быстрей, выше.',
         readIn: 'Хабр',
         image: image4,
-        color: '--colors-controll-default-background-alt-habr',
+        color: '--colors-controll-default-background-alt-sky',
         url: 'https://habr.com/ru/post/596417/'
     },
     {
@@ -51,7 +51,7 @@ const articles = [
         description: 'Сегодня сделаем расширение для фрилансеров очень хорошей биржи Хабр Фриланс, я там сам работал еще в 2018 году, тогда сайт назывался еще Фрилансим.',
         readIn: 'Хабр',
         image: image5,
-        color: '--colors-controll-default-background-alt-habr',
+        color: '--colors-controll-default-background-alt-sky',
         url: 'https://habr.com/ru/post/592967/'
     }
 ]

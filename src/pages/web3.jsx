@@ -2,6 +2,7 @@ import { useWindowSize } from 'usehooks-ts'
 import { useLocation, useNavigate } from 'react-router'
 import { useContext, useRef } from 'react'
 import { LanguageContext } from '../contexts/language/index.jsx'
+import { ModalWindowContext } from '../contexts/modal-window/index.jsx'
 
 import { Bold, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, Link, MicroFont500, NanoFont500, Text } from '../components/global.jsx'
 
@@ -11,6 +12,7 @@ import dappsIcon from './../assets/icons/dapps.svg?react'
 import requestCoinsIcon from './../assets/icons/request-coins.svg?react'
 import airdropIcon from './../assets/icons/airdrop.svg?react'
 import bugIcon from './../assets/icons/bug.svg?react'
+import networkIcon from './../assets/icons/network.svg?react'
 
 import Web3Emotions from '../components/web3-emotions.jsx'
 import Footer from '../components/footer.jsx'
@@ -18,6 +20,7 @@ import List from '../components/list.jsx'
 
 import appsMainnet from '../assets/apps-mainnet.js'
 import appsTestnet from '../assets/apps-testnet.js'
+import sleep from 'sleep-promise'
 
 const Web3 = () => {
   const { width } = useWindowSize()
@@ -25,7 +28,8 @@ const Web3 = () => {
       , location = useLocation()
       , contactsRef = useRef()
 
-  const lang = useContext(LanguageContext)
+  const showModalWindow = useContext(ModalWindowContext)
+      , lang = useContext(LanguageContext)
 
   const isMainnet = location.pathname === '/web3'
 
@@ -89,9 +93,9 @@ const Web3 = () => {
                 ? (
                   <>
                     <Control 
-                      onTap={() => window.location = 'https://dexscreener.com/bsc/0xD566886eB93500e2BA464bd48c8D5A2556569253'}
+                      onTap={() => showModalWindow('DEX')}
                       whileTap={{ y: 2, scale: 0.97 }} 
-                      style={{ background: 'var(--colors-controll-default-background-alt-dex)' }}
+                      style={{ background: 'var(--colors-controll-default-background-alt-dark)' }}
                     >
                       <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                         <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>DEX</MicroFont500>
@@ -99,9 +103,9 @@ const Web3 = () => {
                       </Flex>
                     </Control>
                     <Control 
-                      onTap={() => window.location = 'https://app.uniswap.org/explore/tokens/bnb/0xd566886eb93500e2ba464bd48c8d5a2556569253?inputCurrency=NATIVE'}
+                      onTap={() => showModalWindow('BuyCoin')}
                       whileTap={{ y: 2, scale: 0.97 }} 
-                      style={{ background: 'var(--colors-controll-default-background-alt-uniswap)' }}
+                      style={{ background: 'var(--colors-controll-default-background-alt-pink)' }}
                     >
                       <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                         <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Uniswap</MicroFont500>
@@ -113,9 +117,23 @@ const Web3 = () => {
                 : (
                   <>
                     <Control 
-                      onTap={() => window.location = 'tg://resolve?domain=prohetamines'}
+                      onTap={async () => {
+                        const [isOk] = await showModalWindow('AddNetworks')
+                      
+                        console.log(isOk)
+                      }}
                       whileTap={{ y: 2, scale: 0.97 }} 
-                      style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                      style={{ background: 'var(--colors-controll-default-background-alt-dark)' }}
+                    >
+                      <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Add network</MicroFont500>
+                        <Icon src={networkIcon} />
+                      </Flex>
+                    </Control>
+                    <Control 
+                      onTap={() => showModalWindow('TestnetDrop')}
+                      whileTap={{ y: 2, scale: 0.97 }} 
+                      style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
                     >
                       <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                         <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Get tBNB & tSTAS</MicroFont500>
@@ -123,9 +141,16 @@ const Web3 = () => {
                       </Flex>
                     </Control>
                     <Control 
-                      onTap={() => window.location = 'tg://resolve?domain=prohetamine'}
+                      onTap={async () => {
+                        const [isEmail] = await showModalWindow('BugReport')
+                      
+                        if (isEmail) {
+                          await sleep(300)
+                          await showModalWindow('Email', { value: ['prohetamine@gmail.com', 'Bug report'] })
+                        }
+                      }}
                       whileTap={{ y: 2, scale: 0.97 }} 
-                      style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                      style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
                     >
                       <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                         <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Bug report</MicroFont500>
@@ -140,9 +165,9 @@ const Web3 = () => {
               isMainnet 
                 ? (
                   <Control 
-                    onTap={() => window.location = 'tg://resolve?domain=prohetaminebot'}
+                    onTap={() => showModalWindow('Airdrop')}
                     whileTap={{ y: 2, scale: 0.97 }} 
-                    style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                    style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
                   >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                       <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Airdrop</MicroFont500>

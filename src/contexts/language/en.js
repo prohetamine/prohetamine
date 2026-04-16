@@ -8,7 +8,7 @@ const en = {
     lang: 'lang',
     mainUpdate: '5 april 2026',
     stasUpdate: '8 april 2026',
-    web3Update: '9 april 2026',
+    web3Update: '15 april 2026',
     articlesCount: 'articles',
     readIn: 'Read in ',
     read: 'Read',

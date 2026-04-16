@@ -2,6 +2,7 @@ import { useWindowSize } from 'usehooks-ts'
 import { useNavigate } from 'react-router'
 import { useContext, useRef } from 'react'
 import { LanguageContext } from './../contexts/language'
+import { ModalWindowContext } from '../contexts/modal-window/index.jsx'
 
 import { Avatar, BigFont700, Bold, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, MicroFont500, NanoFont500, SmallFont500, Text, Link, Image } from './../components/global.jsx'
 import avatar from './../assets/stas.png?inline'
@@ -21,7 +22,8 @@ const Stas = () => {
       , navigate = useNavigate()
       , contactsRef = useRef()
 
-  const lang = useContext(LanguageContext)
+  const showModalWindow = useContext(ModalWindowContext)
+      , lang = useContext(LanguageContext)
 
   return (
     <Flex 
@@ -114,13 +116,13 @@ const Stas = () => {
             <Bold>{lang.data.stasPage[25]}</Bold> {lang.data.stasPage[26]} <Bold style={{ overflowWrap: 'break-word', width: '100%' }}>{lang.data.stasPage[27]}</Bold>
           </Text>
           <Text>
-            Official contacts <Link whileTap={{ scale: 0.9 }} onTap={() => `mailto:stas@prohetamine.ru`}>stas@prohetamine.ru</Link>
+            Official contacts <Link whileTap={{ scale: 0.9 }} onTap={() => showModalWindow('Email', { value: ['stas@prohetamine.ru'] })}>stas@prohetamine.ru</Link>
           </Text>
           <Flex ref={contactsRef} gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
             <Control 
-              onTap={() => window.location = 'https://dexscreener.com/bsc/0xD566886eB93500e2BA464bd48c8D5A2556569253'}
+              onTap={() => showModalWindow('DEX')}
               whileTap={{ y: 2, scale: 0.97 }} 
-              style={{ background: 'var(--colors-controll-default-background-alt-dex)' }}
+              style={{ background: 'var(--colors-controll-default-background-alt-dark)' }}
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                 <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>DEX</MicroFont500>
@@ -128,9 +130,9 @@ const Stas = () => {
               </Flex>
             </Control>
             <Control 
-              onTap={() => window.location = 'https://app.uniswap.org/explore/tokens/bnb/0xd566886eb93500e2ba464bd48c8d5a2556569253?inputCurrency=NATIVE'}
+              onTap={ () => showModalWindow('BuyCoin')}
               whileTap={{ y: 2, scale: 0.97 }} 
-              style={{ background: 'var(--colors-controll-default-background-alt-uniswap)' }}
+              style={{ background: 'var(--colors-controll-default-background-alt-pink)' }}
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                 <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Uniswap</MicroFont500>
@@ -138,9 +140,9 @@ const Stas = () => {
               </Flex>
             </Control>
             <Control 
-              onTap={() => window.location = 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=prohetamine@gmail.com'}
+              onTap={() => showModalWindow('Email', { value: ['stas@prohetamine.ru', 'Request buy OTC'] })}
               whileTap={{ y: 2, scale: 0.97 }} 
-              style={{ background: 'var(--colors-controll-default-background-alt-google)' }}
+              style={{ background: 'var(--colors-controll-default-background-alt-green)' }}
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                 <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Buy OTC</MicroFont500>
@@ -159,9 +161,9 @@ const Stas = () => {
               </Flex>
             </Control>
             <Control 
-              onTap={() => window.location = 'tg://resolve?domain=prohetaminebot'}
+              onTap={() => showModalWindow('Airdrop')}
               whileTap={{ y: 2, scale: 0.97 }} 
-              style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+              style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                 <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Airdrop</MicroFont500>

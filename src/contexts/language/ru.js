@@ -8,7 +8,7 @@ const ru = {
     lang: 'язык',
     mainUpdate: '5 апреля 2026',
     stasUpdate: '8 апреля 2026',
-    web3Update: '9 апреля 2026',
+    web3Update: '15 апреля 2026',
     articlesCount: 'статей',
     readIn: 'Читать на ',
     read: 'Читать',

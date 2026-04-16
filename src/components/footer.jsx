@@ -23,6 +23,7 @@ const Footer = () => {
             : (
                 <Flex 
                     onTap={() => setShow(true)}
+                    onHoverStart={() => setShow(true)}
                     gap='var(--spaces-small)'
                 >
                     <MicroFont400 style={{ color: 'var(--colors-based-black)', userSelect: 'none', cursor: 'pointer' }}>...</MicroFont400>

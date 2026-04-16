@@ -2,6 +2,7 @@ import { useWindowSize } from 'usehooks-ts'
 import { useLocation, useNavigate } from 'react-router'
 import { useContext, useEffect, useRef } from 'react'
 import { LanguageContext } from './../contexts/language'
+import { ModalWindowContext } from '../contexts/modal-window/index.jsx'
 
 import { Avatar, BigFont700, Bold, Control, Dot, FakeLink, Flex, HorizontalLine, Icon, MicroFont500, NanoFont500, SmallFont500, Text } from './../components/global.jsx'
 import avatar from './../assets/avatar.png?inline'
@@ -24,7 +25,8 @@ const Home = () => {
       , location = useLocation()
       , contactsRef = useRef()
 
-  const lang = useContext(LanguageContext)
+  const showModalWindow = useContext(ModalWindowContext)
+      , lang = useContext(LanguageContext)
 
   const isArticles = location.pathname === '/articles'
       , isContacts = location.pathname === '/contacts'
@@ -184,7 +186,7 @@ const Home = () => {
                   <Control 
                     onTap={() => window.location = 'tg://resolve?domain=prohetamine'}
                     whileTap={{ y: 2, scale: 0.97 }} 
-                    style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                    style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
                   >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                       <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Telegram DM</MicroFont500>
@@ -192,9 +194,9 @@ const Home = () => {
                     </Flex>
                   </Control>
                   <Control 
-                    onTap={() => window.location = 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=prohetamine@gmail.com'}
+                    onTap={() => showModalWindow('Email', { value: ['prohetamine@gmail.com'] })}
                     whileTap={{ y: 2, scale: 0.97 }} 
-                    style={{ background: 'var(--colors-controll-default-background-alt-google)' }}
+                    style={{ background: 'var(--colors-controll-default-background-alt-green)' }}
                   >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                       <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Email</MicroFont500>
@@ -205,7 +207,7 @@ const Home = () => {
                   <Control 
                     onTap={() => window.location = 'tg://resolve?domain=prohetamines'}
                     whileTap={{ y: 2, scale: 0.97 }} 
-                    style={{ background: 'var(--colors-controll-default-background-alt-tg)' }}
+                    style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
                   >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                       <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Telegram channel</MicroFont500>

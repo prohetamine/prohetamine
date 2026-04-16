@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "@prohetamine/redstone": "^0.1.523",
+    "copy-to-clipboard": "^3.3.3",
     "framer-motion": "^12.38.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router": "^7.14.0",
     "redstone": "^0.0.8",
+    "sleep-promise": "^9.1.0",
     "stas-pay": "^0.1.226",
     "styled-components": "^6.3.12",
     "three": "^0.183.2",
