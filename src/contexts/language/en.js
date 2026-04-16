@@ -63,7 +63,9 @@ const en = {
             'Automation: Puppeteer / BAS'
         ],
         'Contacts & Media.',
-        'Telegram is the fastest way to reach me.'
+        'Telegram is the fastest way to reach me.',
+        'Donate.',
+        'You can support my work by donating in my coin.'
     ],
 
     // stas

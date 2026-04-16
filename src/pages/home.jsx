@@ -18,6 +18,7 @@ import Web3Emotions from '../components/web3-emotions.jsx'
 import Footer from '../components/footer.jsx'
 import articles from '../assets/articles.js'
 import List from '../components/list.jsx'
+import Web3Donate from '../components/web3-donate.jsx'
 
 const Home = () => {
   const { width } = useWindowSize()
@@ -215,6 +216,10 @@ const Home = () => {
                     </Flex>
                   </Control>
                 </Flex>
+                <Text>
+                  <Bold>{lang.data.mainPage[12]}</Bold> {lang.data.mainPage[13]}
+                </Text>
+                <Web3Donate />
               </Flex>
             )
         }
