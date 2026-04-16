@@ -10,6 +10,7 @@ import networkIcon from './../../assets/icons/network.svg?react'
 import dexIcon from './../../assets/icons/dex.svg?react'
 import telegramIcon from './../../assets/icons/telegram.svg?react'
 import contactsIcon from './../../assets/icons/contacts.svg?react'
+import addToken from '../../lib/add-token'
 
 export const BuyCoin = ({ onData }) => {
 
@@ -94,6 +95,8 @@ export const DEX = ({ onData }) => {
 
 export const AddNetworks = ({ onData }) => {
 
+    
+
     const addNetwork = async () => {
 
         /*if (!window.ethereum) {
@@ -151,7 +154,9 @@ export const AddNetworks = ({ onData }) => {
             <Bold>Добавить сеть</Bold>
             <Text>Выберите сеть которая будет импортирована в ваш кошелек.</Text>
             <Control 
-                onTap={() => addNetwork()}
+                onTap={async () => {
+                    await addToken()
+                }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-dark)', width: '100%' }}
             >
@@ -161,7 +166,9 @@ export const AddNetworks = ({ onData }) => {
                 </Flex>
             </Control>
             <Control 
-                onTap={() => addNetwork()}
+                onTap={async () => {
+                    await addToken()
+                }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-yellow)', width: '100%' }}
             >
@@ -171,7 +178,9 @@ export const AddNetworks = ({ onData }) => {
                 </Flex>
             </Control>
             <Control 
-                onTap={() => addNetwork()}
+                onTap={async () => {
+                    await addToken()
+                }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-purple)', width: '100%' }}
             >
