@@ -138,7 +138,7 @@ const Home = () => {
                   articles.map(app => ({
                     ...app,
                     description: app?.descriptionLang ? lang.data[app.descriptionLang] : app.description,
-                    btn: `${app.readInBtn ? lang.data.readInBtn : lang.data.readBtn} ${app.readInBtn}`,
+                    btn: `${app.readInBtn ? lang.data.readInBtn : lang.data.readBtn} ${app.readIn}`,
                     btnIcon: linkIcon
                   }))
                 } 
