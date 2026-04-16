@@ -8,8 +8,8 @@ const paymentAddress = '0xbcfA1b80C39F9a378b12b257934BE409Bc93eC60'
 const Web3Donate = () => {
     const { isConnected, open } = Redstone.useApp() 
         , confirm = useStasPay()
-        , cert = Redstone.useCertificate('donate-btn', { paymentAddress })
-        , donate = Redstone.useCounter(`donate-btn`, {
+        , cert = Redstone.useCertificate('donate-small', { paymentAddress })
+        , donate = Redstone.useCounter(`donate-small`, {
             stas: true,
             paymentAddress
         })
@@ -21,7 +21,7 @@ const Web3Donate = () => {
                     , isConfirm = await confirm(commisson)
 
                 if (isConfirm) {
-                    await cert.updateValue(99000)
+                    await cert.updateValue(5000)
                 } else {
                     return
                 }
