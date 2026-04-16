@@ -155,7 +155,7 @@ export const AddNetworks = ({ onData }) => {
             <Text>Выберите сеть которая будет импортирована в ваш кошелек.</Text>
             <Control 
                 onTap={async () => {
-                    await addToken()
+                    await addToken({ chainId: 97 })
                 }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-dark)', width: '100%' }}
@@ -167,7 +167,7 @@ export const AddNetworks = ({ onData }) => {
             </Control>
             <Control 
                 onTap={async () => {
-                    await addToken()
+                    await addToken({ chainId: 56 })
                 }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-yellow)', width: '100%' }}
@@ -179,7 +179,7 @@ export const AddNetworks = ({ onData }) => {
             </Control>
             <Control 
                 onTap={async () => {
-                    await addToken()
+                    await addToken({ chainId: 137 })
                 }}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-purple)', width: '100%' }}
