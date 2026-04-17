@@ -2,26 +2,20 @@ import { Control, Flex, Icon, MicroFont500 } from "./global"
 import * as Redstone from '@prohetamine/redstone'
 import { useStasPay } from 'stas-pay'
 import coinsIcon from './../assets/icons/coins.svg?react'
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { LanguageContext } from "../contexts/language"
 import { ModalWindowContext } from "../contexts/modal-window"
 
 const paymentAddress = '0xbcfA1b80C39F9a378b12b257934BE409Bc93eC60'
 
 const Web3Donate = () => {
-    const { isConnected, open, chainId } = Redstone.useApp() 
+    const { isConnected, open } = Redstone.useApp() 
         , confirm = useStasPay()
         , cert = Redstone.useCertificate('donate-small', { paymentAddress })
         , donate = Redstone.useCounter(`donate-small`, {
             stas: true,
             paymentAddress
         })
-
-    useEffect(() => {
-        if (isConnected) {
-            alert(chainId)
-        }
-    }, [isConnected])
 
     const showModalWindow = useContext(ModalWindowContext)
         , lang = useContext(LanguageContext)
