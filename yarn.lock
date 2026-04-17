@@ -451,10 +451,10 @@
     vite-plugin-svgr "^4.5.0"
     ws "^8.19.0"
 
-"@prohetamine/redstone@^0.1.526":
-  version "0.1.526"
-  resolved "https://registry.yarnpkg.com/@prohetamine/redstone/-/redstone-0.1.526.tgz#87f9c4dccc81c6feb0b1e51937f1dcce0f6b591e"
-  integrity sha512-O/mq9Qdkyvr7evmHz+LkwEoaP9Ysls/JAfjbVIec72wexLdDBnskwrCCxmlpMsgb4/yYJOPtYgt4Tna1iWFwUg==
+"@prohetamine/redstone@^0.1.527":
+  version "0.1.527"
+  resolved "https://registry.yarnpkg.com/@prohetamine/redstone/-/redstone-0.1.527.tgz#28584b31e0dab504bed80d68c8a2d3b329a2f2f4"
+  integrity sha512-zgzS2/x+NDfsYDgDHCcQUdfoI4Dd2DghtTPhbp8GzkJ0UybKJYAS6uWC0c/c/2M3tRbbRQZDygB+tIXNH5laVw==
   dependencies:
     "@prohetamine/redstone" "^0.1.4"
     fast-deep-equal "^3.1.3"
