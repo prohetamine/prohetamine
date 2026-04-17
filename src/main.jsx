@@ -1,7 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
-import { RedstoneProvider } from '@prohetamine/redstone'
+//import { RedstoneProvider } from '@prohetamine/redstone'
+import { RedstoneProvider } from '/Users/stas/Desktop/redstone'
 import { StasPayProvider } from 'stas-pay'
 import './index.css'
 

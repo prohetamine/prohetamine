@@ -1,5 +1,6 @@
 import { Control, Flex, Icon, MicroFont500 } from "./global"
-import * as Redstone from '@prohetamine/redstone'
+//import * as Redstone from '@prohetamine/redstone'
+import * as Redstone from '/Users/stas/Desktop/redstone'
 import { useStasPay } from 'stas-pay'
 import coinsIcon from './../assets/icons/coins.svg?react'
 import { useContext } from "react"

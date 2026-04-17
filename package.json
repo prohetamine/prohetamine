@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@prohetamine/redstone": "^0.1.523",
+    "@prohetamine/redstone": "^0.1.524",
     "copy-to-clipboard": "^3.3.3",
     "framer-motion": "^12.38.0",
     "react": "^19.2.4",
