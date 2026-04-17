@@ -23,7 +23,7 @@ const Web3Donate = () => {
 
     const handleDonate = async () => {
         if (isConnected) {
-            //alert(JSON.stringify(cert))
+            alert(JSON.stringify(cert))
             if (cert.value === 0) {
                 const commisson = await cert.getCommission()
                     , isConfirm = await confirm(commisson)
@@ -37,7 +37,7 @@ const Web3Donate = () => {
 
             const commisson = await donate.getCommission()
 
-            //alert(JSON.stringify(commisson))
+            alert(JSON.stringify(commisson))
 
             const isConfirm = await confirm(commisson)
 
