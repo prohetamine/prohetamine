@@ -14,15 +14,19 @@ const addNetworkAndToken = async chain => {
                 })
             } catch (err) {
                 if (err.code === 4902) {
-                    await window.ethereum.request({
-                        method: 'wallet_addEthereumChain',
-                        params: [
-                            {
-                                ...chain,
-                                chainId: targetChainIdHex 
-                            }
-                        ]
-                    })
+                    try {
+                        await window.ethereum.request({
+                            method: 'wallet_addEthereumChain',
+                            params: [
+                                {
+                                    ...chain,
+                                    chainId: targetChainIdHex 
+                                }
+                            ]
+                        })
+                    } catch (err) {
+                        console.log(err)
+                    }
                 }
             }
         }
