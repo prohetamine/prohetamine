@@ -224,7 +224,7 @@ export const TestnetDrop = ({ onData }) => {
                 {lang.data.testnetDropCoins[0]} <Bold>BSC</Bold>{lang.data.testnetDropCoins[1]} <Bold>BSC</Bold> {lang.data.testnetDropCoins[2]}
             </Text>
             <Control 
-                onTap={() => window.location = 'https://t.me/prohetamines/374'}
+                onTap={() => window.location = 'https://t.me/prohetamines/373'}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-blue)', width: '100%' }}
             >
@@ -258,7 +258,7 @@ export const Airdrop = ({ onData }) => {
                 {lang.data.airdropSubscribe[0]} <Bold>10 $STAS</Bold> {lang.data.airdropSubscribe[1]}
             </Text>
             <Control 
-                onTap={() => window.location = 'https://t.me/prohetamines/374'}
+                onTap={() => window.location = 'https://t.me/prohetamines/373'}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-blue)', width: '100%' }}
             >
