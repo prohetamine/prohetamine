@@ -1,5 +1,6 @@
 import { Control, Flex, MicroFont500 } from "./global"
 import * as Redstone from '@prohetamine/redstone'
+//import * as Redstone from '/Users/stas/Desktop/redstone'
 
 const Emotion = ({ emoji }) => {
     const { isConnected, open } = Redstone.useApp() 

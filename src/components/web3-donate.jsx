@@ -22,33 +22,41 @@ const Web3Donate = () => {
         , lang = useContext(LanguageContext)
 
     const handleDonate = async () => {
-        if (isConnected) {
-            if (cert.value === 0) {
-                const commisson = await cert.getCommission()
-                    , isConfirm = await confirm(commisson)
+        try {
+            if (isConnected) {
+                alert(JSON.stringify(cert))
+                if (cert.value === 0) {
+                    const commisson = await cert.getCommission()
+                        , isConfirm = await confirm(commisson)
+
+                    if (isConfirm) {
+                        await cert.updateValue(5000)
+                    } else {
+                        return
+                    }
+                }
+
+                const commisson = await donate.getCommission()
+
+                alert(JSON.stringify(commisson))
+
+                const isConfirm = await confirm(commisson)
 
                 if (isConfirm) {
-                    await cert.updateValue(5000)
-                } else {
-                    return
+                    const isDonated = await donate.updateValue()
+                
+                    await showModalWindow('Notify', { value: [
+                        isDonated 
+                            ? lang.data.sendDonateOk 
+                            : lang.data.sendDonateError 
+                        ] 
+                    })
                 }
+            } else {
+                open()
             }
-
-            const commisson = await donate.getCommission()
-                , isConfirm = await confirm(commisson)
-
-            if (isConfirm) {
-                const isDonated = await donate.updateValue()
-            
-                await showModalWindow('Notify', { value: [
-                    isDonated 
-                        ? lang.data.sendDonateOk 
-                        : lang.data.sendDonateError 
-                    ] 
-                })
-            }
-        } else {
-            open()
+        } catch (e) {
+            alert('error')
         }
     }
 
