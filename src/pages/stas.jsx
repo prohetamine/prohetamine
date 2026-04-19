@@ -1,6 +1,6 @@
 import { useWindowSize } from 'usehooks-ts'
 import { useNavigate } from 'react-router'
-import { useContext, useRef } from 'react'
+import { useContext } from 'react'
 import { LanguageContext } from './../contexts/language'
 import { ModalWindowContext } from '../contexts/modal-window/index.jsx'
 
@@ -20,7 +20,6 @@ import Footer from '../components/footer.jsx'
 const Stas = () => {
   const { width } = useWindowSize()
       , navigate = useNavigate()
-      , contactsRef = useRef()
 
   const showModalWindow = useContext(ModalWindowContext)
       , lang = useContext(LanguageContext)
@@ -118,7 +117,16 @@ const Stas = () => {
           <Text>
             Official contacts <Link whileTap={{ scale: 0.9 }} onTap={() => showModalWindow('Email', { value: ['stas@prohetamine.ru'] })}>stas@prohetamine.ru</Link>
           </Text>
-          <Flex ref={contactsRef} gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
+          <iframe 
+            style={{
+              width: '100%',
+              border: 'none',
+              height: '40vh'
+            }}
+            src='https://dexscreener.com/bsc/0xD566886eB93500e2BA464bd48c8D5A2556569253?embed=1&loadChartSettings=0&trades=0&info=0&chartLeftToolbar=0&chartTimeframesToolbar=0&loadChartSettings=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15'
+          >
+          </iframe>
+          <Flex gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
             <Control 
               onTap={() => showModalWindow('DEX')}
               whileTap={{ y: 2, scale: 0.97 }} 
@@ -140,7 +148,7 @@ const Stas = () => {
               </Flex>
             </Control>
             <Control 
-              onTap={() => showModalWindow('Email', { value: ['stas@prohetamine.ru', 'Request buy OTC'] })}
+              onTap={() => showModalWindow('Otc', { value: ['stas@prohetamine.ru', 'Request buy OTC'] })}
               whileTap={{ y: 2, scale: 0.97 }} 
               style={{ background: 'var(--colors-controll-default-background-alt-green)' }}
             >

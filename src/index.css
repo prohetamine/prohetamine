@@ -73,3 +73,16 @@ body {
 @font-face { font-family: 'Inter'; src: url('./assets/fonts/Inter_24pt-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
 @font-face { font-family: 'Inter'; src: url('./assets/fonts/Inter_24pt-ExtraBoldItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; }
 @font-face { font-family: 'Inter'; src: url('./assets/fonts/Inter_24pt-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid var(--colors-border);
+    padding: var(--spaces-small);
+    text-align: left;
+}
+th {
+    background-color: var(--colors-light-border);
+}

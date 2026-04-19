@@ -15,6 +15,7 @@ import NotFound from './pages/not-found.jsx'
 import Loader from './components/loader.jsx'
 import { LanguageProvider } from './contexts/language'
 import { ModalWindowProvider } from './contexts/modal-window/index.jsx'
+import Otc from './pages/otc.jsx'
 
 const config = {
   metadata: {
@@ -43,6 +44,7 @@ createRoot(document.getElementById('root')).render(
                     <Route path='/contacts' element={<Home />} />
                     <Route path='/stas' element={<Stas />} />
                     <Route path='/web3' element={<Web3 />} />
+                    <Route path='/otc' element={<Otc />} />
                     <Route path='/testnet' element={<Web3 />} />
                   </Route>
                   <Route path='*' element={<NotFound />} />

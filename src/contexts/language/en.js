@@ -10,6 +10,7 @@ const en = {
     mainUpdate: '5 april 2026',
     stasUpdate: '8 april 2026',
     web3Update: '15 april 2026',
+    otcUpdate: '18 april 2026',
     articlesCount: 'articles',
     readInBtn: 'Read in ',
     readBtn: 'Read',
@@ -31,6 +32,7 @@ const en = {
     openInGmail: 'Open in Gmail',
     openInMail: 'Open in Mail',
     reportBug: 'Report a bug',
+    otcReport: 'Purchase report',
     contactReportBug: 'You can contact me via one of the available contact methods.',
     networkAndTokenAddedOk: 'Network and token have been added to the wallet.',
     networkAndTokenAddedError: 'Network and token were not added to the wallet.',
@@ -130,7 +132,13 @@ const en = {
     cryptoTarot: 'Blockchain tarot cards, the most accurate results, includes three spreads',
     web3Piano: 'Piano for creating and recording music with the ability to publish on the blockchain',
     horn: 'Easy way to create a public Web3 poll and receive a commission in $STAS tokens as a partner for attracted votes.',
-    de2fa: 'Decentralized storage of 2FA keys protected by client-side encryption based on PBKDF2 and Argon2id with AES-GCM, where all data is encrypted and decrypted exclusively on the user’s device without any server-side key storage.'
+    de2fa: 'Decentralized storage of 2FA keys protected by client-side encryption based on PBKDF2 and Argon2id with AES-GCM, where all data is encrypted and decrypted exclusively on the user’s device without any server-side key storage.',
+    
+    // otc 
+
+    otcPage: [
+        'Recent purchases of $STAS on the OTC market.'
+    ]
 }
 
 export default en

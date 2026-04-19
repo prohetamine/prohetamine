@@ -1,6 +1,6 @@
 import { useWindowSize } from 'usehooks-ts'
 import { useLocation, useNavigate } from 'react-router'
-import { useContext, useRef } from 'react'
+import { useContext } from 'react'
 import { LanguageContext } from '../contexts/language/index.jsx'
 import { ModalWindowContext } from '../contexts/modal-window/index.jsx'
 
@@ -26,7 +26,6 @@ const Web3 = () => {
   const { width } = useWindowSize()
       , navigate = useNavigate()
       , location = useLocation()
-      , contactsRef = useRef()
 
   const showModalWindow = useContext(ModalWindowContext)
       , lang = useContext(LanguageContext)
@@ -76,7 +75,7 @@ const Web3 = () => {
                 </Text>
               )
           } 
-          <Flex ref={contactsRef} gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
+          <Flex gap='var(--spaces-normal)' direction='row' style={{ width: '100%', flexWrap: 'wrap' }}>
             <Control 
               onTap={() => navigate(isMainnet ? '/testnet' : '/web3')}
               whileTap={{ y: 2, scale: 0.97 }} 

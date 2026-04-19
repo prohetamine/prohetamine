@@ -13,6 +13,7 @@ import dexIcon from './../../assets/icons/dex.svg?react'
 import telegramIcon from './../../assets/icons/telegram.svg?react'
 import contactsIcon from './../../assets/icons/contacts.svg?react'
 import addNetworkAndToken from '../../lib/add-network-and-token'
+import otcIcon from './../../assets/icons/otc.svg?react'
 
 export const BuyCoin = ({ onData }) => {
     const lang = useContext(LanguageContext)
@@ -317,6 +318,68 @@ export const Email = ({ onData, value }) => {
                 <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                     <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.openInMail}</MicroFont500>
                     <Icon src={contactsIcon} />
+                </Flex>
+            </Control>
+            <Flex gap='var(--spaces-normal)' direction='row' justify='flex-end' style={{ width: '100%', flexWrap: 'wrap' }}>
+                <Control 
+                    onTap={() => onData(false)}
+                    whileTap={{ y: 2, scale: 0.97 }} 
+                    style={{ background: 'var(--colors-controll-default-background)' }}
+                >
+                    <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                        <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.closeBtn}</MicroFont500>
+                    </Flex>
+                </Control>
+            </Flex>
+        </Flex>
+    )
+}
+
+export const Otc = ({ onData, value }) => {
+    const lang = useContext(LanguageContext)
+
+    useEffect(() => {
+        const timeId = setTimeout(() => {
+            copy(value[0])
+        }, 100)
+
+        return () => clearTimeout(timeId)
+    }, [value])
+
+    return (
+        <Flex gap='var(--spaces-normal)'>
+            <Bold>{lang.data.email}</Bold>
+            <Text>
+                {lang.data.emailAddressCopy[0]} <Bold>{value[0]}</Bold> {lang.data.emailAddressCopy[1]}
+            </Text>
+            <Control 
+                onTap={() => window.location = `https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=${value[0]}${value[1] ? `&su=${value[1]}` : ''}`}
+                whileTap={{ y: 2, scale: 0.97 }} 
+                style={{ background: 'var(--colors-controll-default-background-alt-green)', width: '100%' }}
+            >
+                <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.openInGmail}</MicroFont500>
+                    <Icon src={contactsIcon} />
+                </Flex>
+            </Control>
+            <Control 
+                onTap={() => window.location = `mailto:${value}`}
+                whileTap={{ y: 2, scale: 0.97 }} 
+                style={{ background: 'var(--colors-controll-default-background)', width: '100%' }}
+            >
+                <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.openInMail}</MicroFont500>
+                    <Icon src={contactsIcon} />
+                </Flex>
+            </Control>
+            <Control 
+                onTap={() => window.location = `/otc`}
+                whileTap={{ y: 2, scale: 0.97 }} 
+                style={{ background: 'var(--colors-controll-default-background)', width: '100%' }}
+            >
+                <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                    <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>{lang.data.otcReport}</MicroFont500>
+                    <Icon src={otcIcon} />
                 </Flex>
             </Control>
             <Flex gap='var(--spaces-normal)' direction='row' justify='flex-end' style={{ width: '100%', flexWrap: 'wrap' }}>
