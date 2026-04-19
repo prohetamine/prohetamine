@@ -20,10 +20,10 @@ export const BuyCoin = ({ onData }) => {
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Uniswap</Bold>
+            <Bold>Sushi</Bold>
             <Text>{lang.data.selectNetworkForBuyCoins}</Text>
             <Control 
-                onTap={() => window.location = 'https://app.uniswap.org/explore/tokens/bnb/0xd566886eb93500e2ba464bd48c8d5a2556569253?inputCurrency=NATIVE'}
+                onTap={() => window.location = 'https://www.sushi.com/bsc/swap?token0=NATIVE&token1=0xd566886eb93500e2ba464bd48c8d5a2556569253&swapAmount='}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-yellow)', width: '100%' }}
             >
@@ -33,7 +33,7 @@ export const BuyCoin = ({ onData }) => {
                 </Flex>
             </Control>
             <Control 
-                onTap={() => window.location = 'https://app.uniswap.org/explore/tokens/polygon/0xd566886eb93500e2ba464bd48c8d5a2556569253?inputCurrency=NATIVE'}
+                onTap={() => window.location = 'https://www.sushi.com/polygon/swap?token0=NATIVE&token1=0xd566886eb93500e2ba464bd48c8d5a2556569253&swapAmount='}
                 whileTap={{ y: 2, scale: 0.97 }} 
                 style={{ background: 'var(--colors-controll-default-background-alt-purple)', width: '100%' }}
             >

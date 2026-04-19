@@ -143,7 +143,7 @@ const Stas = () => {
               style={{ background: 'var(--colors-controll-default-background-alt-pink)' }}
             >
               <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
-                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Uniswap</MicroFont500>
+                <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>Sushi</MicroFont500>
                 <Icon src={swapIcon} />
               </Flex>
             </Control>
