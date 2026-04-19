@@ -20,7 +20,7 @@ export const BuyCoin = ({ onData }) => {
 
     return (
         <Flex gap='var(--spaces-normal)'>
-            <Bold>Sushi</Bold>
+            <Bold>Sushi Swap</Bold>
             <Text>{lang.data.selectNetworkForBuyCoins}</Text>
             <Control 
                 onTap={() => window.location = 'https://www.sushi.com/bsc/swap?token0=NATIVE&token1=0xd566886eb93500e2ba464bd48c8d5a2556569253&swapAmount='}
