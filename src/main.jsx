@@ -28,6 +28,10 @@ const config = {
   host: '/'
 }
 
+if (window.location.pathname === '/s') {
+  window.location.href = 'https://t.me/stickershopozon'
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LanguageProvider>
