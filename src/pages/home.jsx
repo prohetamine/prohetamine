@@ -215,6 +215,16 @@ const Home = () => {
                       <Icon src={telegramIcon} />
                     </Flex>
                   </Control>
+                  <Control 
+                    onTap={() => window.location = 'https://github.com/prohetamine'}
+                    whileTap={{ y: 2, scale: 0.97 }} 
+                    style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
+                  >
+                    <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
+                      <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>GitHub</MicroFont500>
+                      <Icon src={telegramIcon} />
+                    </Flex>
+                  </Control>
                 </Flex>
                 <Text>
                   <Bold>{lang.data.mainPage[12]}</Bold> {lang.data.mainPage[13]}
