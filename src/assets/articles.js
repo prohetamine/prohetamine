@@ -4,6 +4,7 @@ import image3 from './articles/267b4555da804c803c0da8817e87cf0b.jpg?inline'
 import image4 from './articles/afe1fe3a5f6c8513b438ad5f4027b503.png?inline'
 import image5 from './articles/2b10724480d20d6c6dd6f72b08170443.jpg?inline'
 import image6 from './articles/232f434534f34f34t4g3.png?inline'
+import image7 from './articles/fd13fcefab2c08ed337012b8386619ea.jpg?inline'
 
 const articles = [
     {
@@ -18,7 +19,7 @@ const articles = [
         title: 'Как я спустя 10 лет всё-таки собрал светодиодный костюм',
         description: 'Привет Хабр! Эта история началась в 2017 году, тогда все было иначе. Я только учился программировать и собирать что-то на микроконтроллерах, это была увлекательная часть моего детства.',
         readIn: 'Хабр',
-        image: image1,
+        image: image7,
         color: '--colors-controll-default-background-alt-sky',
         url: 'https://habr.com/ru/articles/1050516/'
     },
