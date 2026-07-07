@@ -218,7 +218,7 @@ const Home = () => {
                   <Control 
                     onTap={() => window.location = 'https://github.com/prohetamine'}
                     whileTap={{ y: 2, scale: 0.97 }} 
-                    style={{ background: 'var(--colors-controll-default-background-alt-blue)' }}
+                    style={{ background: 'var(--colors-controll-default-background-alt-dark)' }}
                   >
                     <Flex gap='var(--spaces-small)' padding='var(--spaces-small) var(--spaces-normal)' direction='row' justify='center' align='center'>
                       <MicroFont500 style={{ color: 'var(--colors-controll-default-color)' }}>GitHub</MicroFont500>
