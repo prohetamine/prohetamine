@@ -15,6 +15,14 @@ const articles = [
         url: '/stas'
     },
     {
+        title: 'Как я спустя 10 лет всё-таки собрал светодиодный костюм',
+        description: 'Привет Хабр! Эта история началась в 2017 году, тогда все было иначе. Я только учился программировать и собирать что-то на микроконтроллерах, это была увлекательная часть моего детства.',
+        readIn: 'Хабр',
+        image: image1,
+        color: '--colors-controll-default-background-alt-sky',
+        url: 'https://habr.com/ru/articles/1050516/'
+    },
+    {
         title: 'AI Camera от Prohetamine',
         description: 'Привет! Давай сделаем камеру для управления жестами, почти как у Lovense, она будет также управляться с помощью жестов.',
         readIn: 'Telegraf',
